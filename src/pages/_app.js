@@ -42,21 +42,20 @@ export default function App({ Component, pageProps, router }) {
       {debug && <Debug />}
       <GlobalStyle />
       <DrawerContextProvider>
-        <Root>
-          <Navbar />
-          <AnimatePresence exitBeforeEnter>
-            <Main
-              key={router.pathname}
-              variants={pageVariants}
-              transition={pageTransition}
-              initial="initial"
-              animate="in"
-              exit="out"
-            >
-              <Component {...pageProps} key={router.pathname} />
-            </Main>
-          </AnimatePresence>
-        </Root>
+        <Navbar />
+        <AnimatePresence exitBeforeEnter>
+          <Main
+            key={router.pathname}
+            variants={pageVariants}
+            transition={pageTransition}
+            initial="initial"
+            animate="in"
+            exit="out"
+          >
+            <Component {...pageProps} key={router.pathname} />
+          </Main>
+        </AnimatePresence>
+
         <Drawer />
       </DrawerContextProvider>
     </>
@@ -108,9 +107,15 @@ function Drawer() {
   );
 }
 
-const RootElement = styled(motion.div)`
-  position: relative;
-  z-index: 10;
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: #fff;
+  pointer-events: none;
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;
@@ -122,17 +127,6 @@ const RootElement = styled(motion.div)`
         transform: translate(calc(-100% + 5rem), 0);
       }
     `}
-`;
-
-const Nav = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1002;
-  width: 100%;
-  padding: 0 1rem;
-  background-color: #fff;
-  pointer-events: none;
 `;
 
 const Main = styled(motion.main)`

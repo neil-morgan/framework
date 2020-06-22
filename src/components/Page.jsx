@@ -25,4 +25,15 @@ export default function Page({ children }) {
 
 const PageElement = styled.div`
   background-color: #fff;
+  transform: translate(0, 0);
+  transition: all 500ms;
+  transform-origin: right;
+  ${({ drawerState }) =>
+    drawerState &&
+    css`
+      transform: translate(-${breakpoints.sm}rem, 0);
+      @media only screen and (max-width: ${breakpoints.sm}rem) {
+        transform: translate(calc(-100% + 5rem), 0);
+      }
+    `}
 `;

@@ -5,6 +5,7 @@ export const DrawerContext = createContext();
 
 export default function DrawerContextProvider(props) {
   const [drawerState, setDrawerState] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const drawerClose = () => {
     setDrawerState(!1);
