@@ -1,11 +1,10 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled, { css } from "styled-components";
-
 import DrawerContextProvider, {
   DrawerContext,
 } from "../contexts/drawer-context";
-
+import { useSwipeable } from "../hooks/use-swipeable";
 import GlobalStyle, { Debug } from "../components/GlobalStyle";
 import { Row, Col } from "..";
 import Logo from "../components/Logo";
@@ -55,16 +54,10 @@ export default function App({ Component, pageProps, router }) {
             <Component {...pageProps} key={router.pathname} />
           </Main>
         </AnimatePresence>
-
         <Drawer />
       </DrawerContextProvider>
     </>
   );
-}
-
-function Root({ children }) {
-  const { drawerState } = useContext(DrawerContext);
-  return <RootElement drawerState={drawerState}>{children}</RootElement>;
 }
 
 function Navbar() {
@@ -86,48 +79,20 @@ function Navbar() {
 function Drawer() {
   const { drawerState, drawerClose } = useContext(DrawerContext);
   const node = useRef();
-  const handleClickOutside = (e) => {
-    node.current.contains(e.target) || drawerClose();
-  };
-  useEffect(
-    () => (
-      drawerState
-        ? document.addEventListener("click", handleClickOutside)
-        : document.removeEventListener("click", handleClickOutside),
-      () => {
-        document.removeEventListener("click", handleClickOutside);
-      }
-    ),
-    [drawerState]
-  );
+  const handlers = useSwipeable({
+    onSwipedRight: () => {
+      drawerClose();
+    },
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: false,
+  });
+
   return (
-    <DrawerElement ref={node} drawerState={drawerState}>
+    <DrawerElement ref={node} drawerState={drawerState} {...handlers}>
       <Menu />
     </DrawerElement>
   );
 }
-
-const Nav = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1002;
-  width: 100%;
-  padding: 0 1rem;
-  background-color: #fff;
-  pointer-events: none;
-  transform: translate(0, 0);
-  transition: all 500ms;
-  transform-origin: right;
-  ${({ drawerState }) =>
-    drawerState &&
-    css`
-      transform: translate(-${breakpoints.sm}rem, 0);
-      @media only screen and (max-width: ${breakpoints.sm}rem) {
-        transform: translate(calc(-100% + 5rem), 0);
-      }
-    `}
-`;
 
 const Main = styled(motion.main)`
   position: absolute;
@@ -137,10 +102,25 @@ const Main = styled(motion.main)`
   left: 0;
 `;
 
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+  width: 100%;
+  min-height: 5rem;
+  padding: 0 1rem;
+  background-color: #fff;
+  pointer-events: none;
+  transform: translate(0, 0);
+  transition: all 500ms;
+  transform-origin: right;
+`;
+
 const DrawerElement = styled.aside`
   flex-direction: column;
   justify-content: space-evenly;
-  z-index: 9;
+  z-index: 10;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -155,7 +135,7 @@ const DrawerElement = styled.aside`
   background: red;
 
   @media only screen and (max-width: ${breakpoints.sm}rem) {
-    width: calc(100% - 5rem);
+    width: 100%;
   }
 
   ${({ drawerState }) =>

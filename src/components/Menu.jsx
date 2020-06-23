@@ -8,8 +8,7 @@ export default function Menu() {
   const { drawerClose } = useContext(DrawerContext);
 
   const handleClick = (href) => {
-    setTimeout(() => Router.push(href), 350);
-    drawerClose();
+    setTimeout(() => Router.push(href), 350), drawerClose();
   };
 
   return (

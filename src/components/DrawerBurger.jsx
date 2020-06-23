@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import { DrawerContext } from "../contexts/drawer-context";
-
 import config from "../config";
 
 const { palette } = config();

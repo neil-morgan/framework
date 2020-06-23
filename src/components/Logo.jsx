@@ -1,14 +1,22 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-
+import { DrawerContext } from "../contexts/drawer-context";
 import Router from "next/router";
 import config from "../config";
 
 const { palette } = config();
 
 export default function Logo() {
+  const { drawerState, drawerClose } = useContext(DrawerContext);
+
+  const handleClick = (e) => {
+    drawerState
+      ? (setTimeout(() => Router.push(e), 350), drawerClose())
+      : Router.push(e);
+  };
+
   return (
-    <Link onClick={() => Router.push("/")}>
+    <Link onClick={() => handleClick("/")}>
       <Graphic viewBox="0 0 44.3 25">
         <polygon points="38.8,25 38.8,10.9 31.8,15.7 19.3,7 19.3,0 31.8,8.5 44.3,0 44.3,25 	" />
         <polygon points="0,25 0,0 25,17.2 25,24.2 5.5,10.3 5.5,25 	" />
