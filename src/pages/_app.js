@@ -92,10 +92,10 @@ function Drawer() {
   useEffect(
     () => (
       drawerState
-        ? document.addEventListener("mousedown", handleClickOutside)
-        : document.removeEventListener("mousedown", handleClickOutside),
+        ? document.addEventListener("click", handleClickOutside)
+        : document.removeEventListener("click", handleClickOutside),
       () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("click", handleClickOutside);
       }
     ),
     [drawerState]

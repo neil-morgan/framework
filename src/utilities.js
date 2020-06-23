@@ -58,7 +58,7 @@ class DomUtils {
         }
       );
 
-      window.addEventListener("touchmove", DomUtils.preventDefault, {
+      document.addEventListener("touchmove", DomUtils.preventDefault, {
         passive: false,
       });
     }
@@ -76,7 +76,7 @@ class DomUtils {
           passive: false,
         }
       ); // Enable scrolling in Chrome
-      window.removeEventListener("touchmove", DomUtils.preventDefault, {
+      document.removeEventListener("touchmove", DomUtils.preventDefault, {
         passive: false,
       });
     }

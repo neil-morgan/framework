@@ -25,9 +25,7 @@ export default function DrawerBurger() {
 }
 
 const Toggle = styled.a`
-  position: absolute;
-  top: 0;
-  right: 0;
+  align-self: flex-end;
   align-items: center;
   justify-content: center;
   min-width: 5rem;
