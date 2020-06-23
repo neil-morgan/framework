@@ -11,6 +11,8 @@ export default function Menu() {
     setTimeout(() => Router.push(href), 350), drawerClose();
   };
 
+  //MATERIAL UI STYLE RIPPLE BUTTONS
+  //full width
   return (
     <Nav>
       <Link onClick={() => handleClick("/")}>Home</Link>
