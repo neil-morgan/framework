@@ -5,8 +5,6 @@ export default function Tester() {
     <Section>
       <Container>
         <Col xs>
-          <Heading.H1>Heading 1</Heading.H1>
-          <Heading.H2>Heading 2</Heading.H2>
           <Paragraph>
             Sunt consectetur irure <strong>cillum reprehenderit</strong> duis.{" "}
             <Small>This is small text</Small> pariatur ut esse consequat qui.

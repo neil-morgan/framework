@@ -5,7 +5,7 @@ import config from "../config";
 
 const { palette } = config();
 
-export default function DrawerBurger() {
+export default function Burger() {
   const { drawerState, drawerToggle } = useContext(DrawerContext);
 
   return (
