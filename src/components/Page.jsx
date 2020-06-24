@@ -30,25 +30,25 @@ export default function Page({ children }) {
     window.scrollTo(0, 0);
   }, []);
 
-  const pageVariants = {
+  const variants = {
     initial: {
       opacity: 0,
-      y: 15,
+      scale: 1.02,
     },
     in: {
       opacity: 1,
-      y: 0,
+      scale: 1,
     },
     out: {
       opacity: 0,
-      y: 15,
+      scale: 1.02,
     },
   };
 
-  const pageTransition = {
+  const transition = {
     type: "tween",
     ease: "easeInOut",
-    duration: 0.2,
+    duration: 0.33,
   };
 
   const handleClickInside = (e) => {
@@ -62,8 +62,8 @@ export default function Page({ children }) {
     <Main drawerState={drawerState}>
       <Body
         ref={node}
-        variants={pageVariants}
-        transition={pageTransition}
+        variants={variants}
+        transition={transition}
         initial="initial"
         animate="in"
         exit="out"
