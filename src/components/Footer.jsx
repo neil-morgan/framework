@@ -23,5 +23,5 @@ export default function Footer() {
 }
 
 const FooterElement = styled(Section)`
-  background: ${colors.grey};
+  background: ${colors.indigo};
 `;

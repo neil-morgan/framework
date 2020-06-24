@@ -5,7 +5,7 @@ import { DrawerContext } from "../contexts/drawer-context";
 import Menu from "./Menu";
 import config from "../config";
 
-const { breakpoints } = config();
+const { breakpoints, colors } = config();
 
 export default function Drawer() {
   const { drawerState, drawerClose } = useContext(DrawerContext);
@@ -33,19 +33,19 @@ const Aside = styled.aside`
   bottom: 0;
   right: 0;
   height: calc(100vh + 5rem);
-  padding: 1rem 1rem 12rem;
+  padding: 5rem 0 12rem;
   transform-origin: right;
   transition: all 500ms;
-  transform: translate(0, 0);
+  transform: translate(50%, 0);
   display: flex;
   width: calc(${breakpoints.sm}rem);
-  background: red;
+  background: ${colors.steel};
   @media only screen and (max-width: ${breakpoints.sm}rem) {
     width: 100%;
   }
-  /* ${({ drawerState }) =>
+  ${({ drawerState }) =>
     drawerState &&
     css`
       transform: translate(0, 0);
-    `} */
+    `}
 `;

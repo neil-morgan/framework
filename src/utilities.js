@@ -1,4 +1,4 @@
-function changeHexBrightness(color, percent) {
+function brightness(color, percent) {
   var num = parseInt(color.toString().replace("#", ""), 16),
     amt = Math.round(2.55 * percent),
     R = (num >> 16) + amt,
@@ -84,7 +84,7 @@ class DomUtils {
 }
 
 const utilities = {
-  changeHexBrightness,
+  brightness,
   DomUtils,
 };
 

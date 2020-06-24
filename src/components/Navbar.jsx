@@ -4,6 +4,9 @@ import { DrawerContext } from "../contexts/drawer-context";
 import { Row, Col } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
+import config from "../config";
+
+const { palette } = config();
 
 export default function Navbar() {
   const { drawerState } = useContext(DrawerContext);
@@ -29,6 +32,6 @@ const Nav = styled.nav`
   width: 100%;
   min-height: 5rem;
   padding: 0 1rem;
-  background-color: #fff;
+  background-color: ${palette.backgroundDark};
   pointer-events: none;
 `;

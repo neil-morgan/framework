@@ -3,15 +3,21 @@ import PropTypes from "prop-types";
 import { fluidRange } from "polished";
 import config from "../config";
 
-const { dimensions } = config();
+const { dimensions, palette, colors } = config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
 const Root = css`
   font-family: "Nunito";
   font-weight: 400;
-  color: inherit;
+  color: ${palette.paragraphLight};
   margin: 0 0 0.5em 0;
+
+  ${(props) =>
+    props.dark &&
+    `
+    color: ${palette.paragraphDark};
+  `}
 `;
 
 const Paragraph = styled.p`
@@ -115,6 +121,23 @@ export const Small = styled.small`
     "320px",
     "1200px"
   )}
+`;
+
+export const Bold = styled.strong`
+  ${Root};
+  font-weight: 900;
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+export const Link = styled.a`
+  ${Root};
+  font-weight: 600;
+  color: ${colors.blue};
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 Paragraph.displayName = "Paragraph";

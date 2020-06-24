@@ -3,15 +3,21 @@ import PropTypes from "prop-types";
 import { fluidRange } from "polished";
 import config from "../config";
 
-const { dimensions } = config();
+const { dimensions, palette } = config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
 const Root = css`
   font-family: 'Roboto';
   font-weight: 400;
-  color: inherit;
+  color: ${palette.headingLight};
   margin: 0 0 0.5em 0;
+
+  ${(props) =>
+    props.dark &&
+    `
+    color: ${palette.headingDark};
+  `}
 
   ${(props) =>
     props.left &&

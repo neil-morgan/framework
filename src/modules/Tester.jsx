@@ -1,17 +1,29 @@
-import { Section, Container, Row, Col, Heading, Paragraph, Small } from "../";
+import {
+  Section,
+  Container,
+  Row,
+  Col,
+  Heading,
+  Paragraph,
+  Small,
+  Bold,
+  Link,
+} from "../";
 
 export default function Tester() {
   return (
     <Section>
       <Container>
         <Col xs>
+          <Heading.H1>On dark</Heading.H1>
+          <Heading.H2>Sub heading</Heading.H2>
           <Paragraph>
-            Sunt consectetur irure <strong>cillum reprehenderit</strong> duis.{" "}
+            Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}
             <Small>This is small text</Small> pariatur ut esse consequat qui.
             Amet duis deserunt id ullamco officia fugiat mollit culpa pariatur
-            amet et deserunt. Pariatur <a href="#">ipsum proident</a> minim
-            proident nostrud pariatur proident sint adipisicing. Excepteur elit
-            non Lorem eu irure enim excepteur. Irure eiusmod proident
+            amet et deserunt. Pariatur <Link href="#">ipsum proident</Link>{" "}
+            minim proident nostrud pariatur proident sint adipisicing. Excepteur
+            elit non Lorem eu irure enim excepteur. Irure eiusmod proident
             reprehenderit cupidatat id aute do eu enim pariatur. Quis tempor
             elit cillum anim dolore.
           </Paragraph>

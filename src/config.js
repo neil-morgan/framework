@@ -1,4 +1,7 @@
 import { css } from "styled-components";
+import utilities from "./utilities";
+
+const { brightness } = utilities;
 
 export const BASE_CONF = {
   debug: false,
@@ -53,6 +56,12 @@ export const BASE_CONF = {
 const COLOR_PALETTE = {
   primary: BASE_CONF.colors.violet,
   secondary: BASE_CONF.colors.blue,
+  headingLight: brightness(BASE_CONF.colors.grey, 20),
+  headingDark: brightness(BASE_CONF.colors.grey, -60),
+  paragraphLight: brightness(BASE_CONF.colors.grey, 10),
+  paragraphDark: brightness(BASE_CONF.colors.grey, -50),
+  backgroundLight: brightness(BASE_CONF.colors.grey, 35),
+  backgroundDark: brightness(BASE_CONF.colors.grey, -45),
 };
 
 const DIMENSION_NAMES = ["xs", "sm", "md", "lg"];

@@ -5,7 +5,7 @@ import { DrawerContext } from "../contexts/drawer-context";
 import Footer from "./Footer";
 import config from "../config";
 
-const { breakpoints } = config();
+const { breakpoints, palette } = config();
 
 export default function Page({ children }) {
   const { drawerState, drawerClose } = useContext(DrawerContext);
@@ -82,7 +82,7 @@ const Main = styled.main`
   top: 5rem;
   right: 0;
   left: 0;
-  background: #fff;
+  background-color: ${palette.backgroundDark};
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;
