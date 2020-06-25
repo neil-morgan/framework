@@ -52,6 +52,7 @@ html {
 
 body {
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 button,
