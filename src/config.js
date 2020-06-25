@@ -20,16 +20,6 @@ export const BASE_CONF = {
     md: 53, // em
     lg: 75, // em
   },
-  menu: [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "About",
-      href: "/about/",
-    },
-  ],
   colors: {
     red: "#f44336",
     pink: "#e91e63",
@@ -54,14 +44,20 @@ export const BASE_CONF = {
 };
 
 const COLOR_PALETTE = {
-  primary: BASE_CONF.colors.violet,
+  primary: BASE_CONF.colors.indigo,
   secondary: BASE_CONF.colors.blue,
-  headingLight: brightness(BASE_CONF.colors.grey, 20),
-  headingDark: brightness(BASE_CONF.colors.grey, -60),
-  paragraphLight: brightness(BASE_CONF.colors.grey, 10),
-  paragraphDark: brightness(BASE_CONF.colors.grey, -50),
-  backgroundLight: brightness(BASE_CONF.colors.grey, 35),
-  backgroundDark: brightness(BASE_CONF.colors.grey, -45),
+  tertiary: "xyz",
+
+  light: {
+    heading: brightness(BASE_CONF.colors.grey, 20),
+    paragraph: brightness(BASE_CONF.colors.grey, 10),
+    background: brightness(BASE_CONF.colors.grey, 35),
+  },
+  dark: {
+    heading: brightness(BASE_CONF.colors.grey, -60),
+    paragraph: brightness(BASE_CONF.colors.grey, -50),
+    background: brightness(BASE_CONF.colors.grey, -45),
+  },
 };
 
 const DIMENSION_NAMES = ["xs", "sm", "md", "lg"];

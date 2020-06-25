@@ -44,6 +44,6 @@ const Link = styled.a`
 const Graphic = styled.svg`
   height: 100%;
   width: 100%;
-  fill: ${palette.primary};
+  fill: ${palette.light.background};
   transition: all 500ms cubic-bezier(0.75, 0, 0.25, 1);
 `;

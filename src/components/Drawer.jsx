@@ -4,8 +4,10 @@ import styled, { css } from "styled-components";
 import { DrawerContext } from "../contexts/drawer-context";
 import Menu from "./Menu";
 import config from "../config";
+import utilities from "../utilities";
 
-const { breakpoints, colors } = config();
+const { brightness } = utilities;
+const { breakpoints, palette } = config();
 
 export default function Drawer() {
   const { drawerState, drawerClose } = useContext(DrawerContext);
@@ -39,7 +41,7 @@ const Aside = styled.aside`
   transform: translate(50%, 0);
   display: flex;
   width: calc(${breakpoints.sm}rem);
-  background: ${colors.steel};
+  background: ${brightness(palette.primary, -20)};
   @media only screen and (max-width: ${breakpoints.sm}rem) {
     width: 100%;
   }

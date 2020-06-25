@@ -22,14 +22,14 @@ export default function Tester() {
           <Heading.H1 dark>On light</Heading.H1>
           <Heading.H2 dark>Sub heading</Heading.H2>
           <Paragraph dark>
-            Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}
-            <Small>This is small text</Small> pariatur ut esse consequat qui.
-            Amet duis deserunt id ullamco officia fugiat mollit culpa pariatur
-            amet et deserunt. Pariatur <Link href="#">ipsum proident</Link>{" "}
-            minim proident nostrud pariatur proident sint adipisicing. Excepteur
-            elit non Lorem eu irure enim excepteur. Irure eiusmod proident
-            reprehenderit cupidatat id aute do eu enim pariatur. Quis tempor
-            elit cillum anim dolore.
+            Sunt consectetur irure <Bold dark>cillum reprehenderit</Bold> duis.{" "}
+            <Small dark>This is small text</Small> pariatur ut esse consequat
+            qui. Amet duis deserunt id ullamco officia fugiat mollit culpa
+            pariatur amet et deserunt. Pariatur{" "}
+            <Link href="#">ipsum proident</Link> minim proident nostrud pariatur
+            proident sint adipisicing. Excepteur elit non Lorem eu irure enim
+            excepteur. Irure eiusmod proident reprehenderit cupidatat id aute do
+            eu enim pariatur. Quis tempor elit cillum anim dolore.
           </Paragraph>
           <Paragraph dark>
             Eiusmod aute mollit aliquip id fugiat nisi excepteur qui. In
@@ -45,5 +45,5 @@ export default function Tester() {
 }
 
 const Hero = styled(Section)`
-  background: ${palette.backgroundLight};
+  background: ${palette.light.background};
 `;

@@ -10,13 +10,13 @@ const ModificatorType = PropTypes.oneOf(dimensions);
 const Root = css`
   font-family: 'Roboto';
   font-weight: 400;
-  color: ${palette.headingLight};
+  color: ${palette.light.heading};
   margin: 0 0 0.5em 0;
 
   ${(props) =>
     props.dark &&
     `
-    color: ${palette.headingDark};
+    color: ${palette.dark.heading};
   `}
 
   ${(props) =>

@@ -33,15 +33,12 @@ export default function Page({ children }) {
   const variants = {
     initial: {
       opacity: 0,
-      scale: 1.02,
     },
     in: {
       opacity: 1,
-      scale: 1,
     },
     out: {
       opacity: 0,
-      scale: 1.02,
     },
   };
 
@@ -82,7 +79,7 @@ const Main = styled.main`
   top: 5rem;
   right: 0;
   left: 0;
-  background-color: ${palette.backgroundDark};
+  background-color: ${palette.dark.background};
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { DrawerContext } from "../contexts/drawer-context";
-import { Row, Col } from "..";
+import { Row, Col, Heading } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
 import config from "../config";
@@ -32,6 +32,5 @@ const Nav = styled.nav`
   width: 100%;
   min-height: 5rem;
   padding: 0 1rem;
-  background-color: ${palette.backgroundDark};
-  pointer-events: none;
+  background-color: ${palette.dark.background};
 `;

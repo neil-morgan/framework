@@ -15,6 +15,9 @@ export default function Menu() {
     <Nav>
       <Button to={"/"}>Home</Button>
       <Button to={"/about"}>About</Button>
+      <Button to={"/"}>Foo</Button>
+      <Button to={"/"}>Bar</Button>
+      <Button to={"/"}>Baz</Button>
     </Nav>
   );
 }
@@ -22,7 +25,8 @@ export default function Menu() {
 function Button(props) {
   const { drawerClose } = useContext(DrawerContext);
   const handleClick = (href) => {
-    setTimeout(() => Router.push(href), 500), drawerClose();
+    setTimeout(() => Router.push(href), 700),
+      setTimeout(() => drawerClose(), 300);
   };
   return (
     <ButtonBase onClick={() => handleClick(props.to)} props={props}>

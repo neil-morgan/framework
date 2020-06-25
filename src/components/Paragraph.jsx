@@ -7,21 +7,20 @@ const { dimensions, palette, colors } = config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
-const Root = css`
+const Root = styled.p`
   font-family: "Nunito";
   font-weight: 400;
-  color: ${palette.paragraphLight};
+  color: ${palette.light.paragraph};
   margin: 0 0 0.5em 0;
 
   ${(props) =>
     props.dark &&
     `
-    color: ${palette.paragraphDark};
+    color: ${palette.dark.paragraph};
   `}
 `;
 
-const Paragraph = styled.p`
-  ${Root};
+const Paragraph = styled(Root)`
   ${fluidRange(
     {
       prop: "font-size",
@@ -108,8 +107,9 @@ const Paragraph = styled.p`
   `}
 `;
 
-export const Small = styled.small`
-  ${Root};
+export const Small = styled(Root).attrs({
+  as: "small",
+})`
   margin: 0;
   display: inline-flex;
   ${fluidRange(
@@ -123,16 +123,18 @@ export const Small = styled.small`
   )}
 `;
 
-export const Bold = styled.strong`
-  ${Root};
+export const Bold = styled(Root).attrs({
+  as: "strong",
+})`
   font-weight: 900;
   &:hover {
     text-decoration: none;
   }
 `;
 
-export const Link = styled.a`
-  ${Root};
+export const Link = styled(Root).attrs({
+  as: "a",
+})`
   font-weight: 600;
   color: ${colors.blue};
   &:hover {

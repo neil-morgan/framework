@@ -57,7 +57,7 @@ const Bar = styled.span`
   position: absolute;
   height: 20%;
   width: 100%;
-  background: ${palette.primary};
+  background: ${palette.light.background};
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
