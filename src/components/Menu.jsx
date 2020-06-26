@@ -1,14 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import Router from "next/router";
-import { DrawerContext } from "../contexts/drawer-context";
+import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fluidRange } from "polished";
 import utilities from "../utilities";
-import config from "../config";
+import Config from "../config";
 
 const { brightness } = utilities;
-const { palette } = config();
+const { palette } = Config();
 
 export default function Menu() {
   return (
@@ -23,10 +23,10 @@ export default function Menu() {
 }
 
 function Button(props) {
-  const { drawerClose } = useContext(DrawerContext);
+  const { drawerClose } = useContext(GlobalContext);
   const handleClick = (href) => {
-    setTimeout(() => Router.push(href), 700),
-      setTimeout(() => drawerClose(), 300);
+    setTimeout(() => Router.push(href), 400),
+      setTimeout(() => drawerClose(), 150);
   };
   return (
     <ButtonBase onClick={() => handleClick(props.to)} props={props}>

@@ -15,7 +15,7 @@ export default function Tester() {
     <Section>
       <Container>
         <Col xs>
-          <Heading.H1>On dark</Heading.H1>
+          <Heading.H1>Standard</Heading.H1>
           <Heading.H2>Sub heading</Heading.H2>
           <Paragraph>
             Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}

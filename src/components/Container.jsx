@@ -1,24 +1,24 @@
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
-import config from "../config";
+import Config from "../config";
 
-const { dimensions } = config();
+const { dimensions } = Config();
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  padding-right: ${(props) => config(props).outerMargin + "rem"};
-  padding-left: ${(props) => config(props).outerMargin + "rem"};
+  padding-right: ${(props) => Config(props).outerMargin + "rem"};
+  padding-left: ${(props) => Config(props).outerMargin + "rem"};
 
   ${(props) =>
     !props.fluid &&
     css`
       ${dimensions.map(
         (t) =>
-          config(props).container[t] &&
-          config(props).media[t]`
-            width: ${(props) => config(props).container[t]}rem;
+          Config(props).container[t] &&
+          Config(props).media[t]`
+            width: ${(props) => Config(props).container[t]}rem;
       `
       )}
     `}

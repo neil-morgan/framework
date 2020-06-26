@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Section, Container, Row, Col, Heading, Paragraph, Small } from "../";
-import config from "../config";
+import Config from "../config";
 
-const { colors } = config();
+const { colors } = Config();
 
 export default function Footer() {
   return (
@@ -22,6 +22,4 @@ export default function Footer() {
   );
 }
 
-const FooterElement = styled(Section)`
-  background: ${colors.indigo};
-`;
+const FooterElement = styled(Section)``;

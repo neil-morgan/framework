@@ -1,23 +1,18 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import { fluidRange } from "polished";
-import config from "../config";
+import Config from "../config";
 
-const { dimensions, palette, colors } = config();
+const { dimensions, colors } = Config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
 const Root = styled.p`
   font-family: "Nunito";
   font-weight: 400;
-  color: ${palette.light.paragraph};
+  transition: all 500ms;
   margin: 0 0 0.5em 0;
-
-  ${(props) =>
-    props.dark &&
-    `
-    color: ${palette.dark.paragraph};
-  `}
+  color: inherit;
 `;
 
 const Paragraph = styled(Root)`

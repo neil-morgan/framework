@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { DrawerContext } from "../contexts/drawer-context";
+import { GlobalContext } from "../contexts/global-context";
 import Router from "next/router";
-import config from "../config";
+import Config from "../config";
 
-const { palette } = config();
+const { palette } = Config();
 
 export default function Logo() {
-  const { drawerState, drawerClose } = useContext(DrawerContext);
+  const { drawerState, drawerClose } = useContext(GlobalContext);
 
   const handleClick = (e) => {
     drawerState
@@ -44,6 +44,6 @@ const Link = styled.a`
 const Graphic = styled.svg`
   height: 100%;
   width: 100%;
-  fill: ${palette.light.background};
+  fill: ${palette.primary};
   transition: all 500ms cubic-bezier(0.75, 0, 0.25, 1);
 `;

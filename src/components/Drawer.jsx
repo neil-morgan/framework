@@ -1,16 +1,16 @@
 import { useContext, useRef } from "react";
 import { useSwipeable } from "../hooks/use-swipeable";
 import styled, { css } from "styled-components";
-import { DrawerContext } from "../contexts/drawer-context";
+import { GlobalContext } from "../contexts/global-context";
 import Menu from "./Menu";
-import config from "../config";
+import Config from "../config";
 import utilities from "../utilities";
 
 const { brightness } = utilities;
-const { breakpoints, palette } = config();
+const { breakpoints, palette } = Config();
 
-export default function Drawer() {
-  const { drawerState, drawerClose } = useContext(DrawerContext);
+export default function Global() {
+  const { drawerState, drawerClose } = useContext(GlobalContext);
   const node = useRef();
   const handlers = useSwipeable({
     onSwipedRight: () => {
@@ -38,7 +38,7 @@ const Aside = styled.aside`
   padding: 5rem 0 12rem;
   transform-origin: right;
   transition: all 500ms;
-  transform: translate(50%, 0);
+  transform: translate(25%, 0);
   display: flex;
   width: calc(${breakpoints.sm}rem);
   background: ${brightness(palette.primary, -20)};

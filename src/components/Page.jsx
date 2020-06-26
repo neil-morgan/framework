@@ -1,14 +1,14 @@
 import { useEffect, useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
-import { DrawerContext } from "../contexts/drawer-context";
+import { GlobalContext } from "../contexts/global-context";
 import Footer from "./Footer";
-import config from "../config";
+import Config from "../config";
 
-const { breakpoints, palette } = config();
+const { breakpoints, palette } = Config();
 
 export default function Page({ children }) {
-  const { drawerState, drawerClose } = useContext(DrawerContext);
+  const { drawerState, drawerClose } = useContext(GlobalContext);
   const node = useRef();
 
   useEffect(
@@ -79,10 +79,10 @@ const Main = styled.main`
   top: 5rem;
   right: 0;
   left: 0;
-  background-color: ${palette.dark.background};
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;
+  background: ${({ theme }) => theme.background};
   ${({ drawerState }) =>
     drawerState &&
     css`

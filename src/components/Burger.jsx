@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
-import { DrawerContext } from "../contexts/drawer-context";
-import config from "../config";
+import { GlobalContext } from "../contexts/global-context";
+import Config from "../config";
 
-const { palette } = config();
+const { palette } = Config();
 
 export default function Burger() {
-  const { drawerState, drawerToggle } = useContext(DrawerContext);
+  const { themeState, drawerState, drawerToggle } = useContext(GlobalContext);
 
   return (
     <Toggle
@@ -15,9 +15,9 @@ export default function Burger() {
       }}
     >
       <Bars>
-        <Bar drawerState={drawerState} />
-        <Bar drawerState={drawerState} />
-        <Bar drawerState={drawerState} />
+        <Bar themeState={themeState} drawerState={drawerState} />
+        <Bar themeState={themeState} drawerState={drawerState} />
+        <Bar themeState={themeState} drawerState={drawerState} />
       </Bars>
     </Toggle>
   );
@@ -57,11 +57,11 @@ const Bar = styled.span`
   position: absolute;
   height: 20%;
   width: 100%;
-  background: ${palette.light.background};
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
   transition: all 500ms;
+  background: ${palette.primary};
 
   &:nth-child(1) {
     top: 0px;

@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { DrawerContext } from "../contexts/drawer-context";
+import { GlobalContext } from "../contexts/global-context";
 import { Row, Col, Heading } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
-import config from "../config";
+import Config from "../config";
 
-const { palette } = config();
+const { palette } = Config();
 
-export default function Navbar() {
-  const { drawerState } = useContext(DrawerContext);
+export default function Navbar(props) {
+  const { drawerState } = useContext(GlobalContext);
   return (
     <Nav drawerState={drawerState}>
       <Row>
@@ -32,5 +32,5 @@ const Nav = styled.nav`
   width: 100%;
   min-height: 5rem;
   padding: 0 1rem;
-  background-color: ${palette.dark.background};
+  background: ${({ theme }) => theme.background};
 `;

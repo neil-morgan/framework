@@ -44,18 +44,20 @@ export const BASE_CONF = {
 };
 
 const COLOR_PALETTE = {
-  primary: BASE_CONF.colors.indigo,
+  primary: brightness(BASE_CONF.colors.pink, 20),
   secondary: BASE_CONF.colors.blue,
   tertiary: "xyz",
 
   light: {
-    heading: brightness(BASE_CONF.colors.grey, 20),
-    paragraph: brightness(BASE_CONF.colors.grey, 10),
-    background: brightness(BASE_CONF.colors.grey, 35),
+    mode: "light",
+    heading: brightness(BASE_CONF.colors.grey, -50),
+    paragraph: brightness(BASE_CONF.colors.grey, -45),
+    background: brightness(BASE_CONF.colors.grey, 32),
   },
   dark: {
-    heading: brightness(BASE_CONF.colors.grey, -60),
-    paragraph: brightness(BASE_CONF.colors.grey, -50),
+    mode: "dark",
+    heading: brightness(BASE_CONF.colors.grey, 20),
+    paragraph: brightness(BASE_CONF.colors.grey, 10),
     background: brightness(BASE_CONF.colors.grey, -45),
   },
 };
@@ -99,7 +101,7 @@ const resolveConfig = () => {
   return conf;
 };
 
-export default function config(props) {
+export default function Config(props) {
   const conf = resolveConfig(props);
   configCache[0] = conf;
   return conf;

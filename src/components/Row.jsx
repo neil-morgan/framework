@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import config from "../config";
+import Config from "../config";
 
-const { dimensions } = config();
+const { dimensions } = Config();
 const ModificatorType = PropTypes.oneOf(dimensions);
 
 const Row = styled.div`
