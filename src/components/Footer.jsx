@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Section, Container, Row, Col, Heading, Paragraph, Small } from "../";
-import Config from "../config";
+import utilities from "../utilities";
+
+const { brightness } = utilities;
 
 export default function Footer() {
   return (
@@ -21,5 +23,9 @@ export default function Footer() {
 }
 
 const FooterElement = styled(Section)`
-  background: ${({ theme }) => theme.primary};
+  background: linear-gradient(
+    to bottom right,
+    ${({ theme }) => theme.primary},
+    ${({ theme }) => brightness(theme.primary, -25)} 100%
+  );
 `;

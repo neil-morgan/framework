@@ -82,7 +82,9 @@ const Main = styled.main`
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;
+  box-shadow: 0.2rem 0 0.2rem 0rem rgba(0, 0, 0, 0.2);
   background: ${({ theme }) => theme.background};
+
   ${({ drawerState }) =>
     drawerState &&
     css`

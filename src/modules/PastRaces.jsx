@@ -20,7 +20,7 @@ export default function Test2() {
         </Col>
         <Col xs>
           <Pod>
-            <Heading.H2>Sub heading</Heading.H2>
+            <Heading.H2>League | Track | Position</Heading.H2>
             <Paragraph>
               Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}
               <Small>This is small text</Small> pariatur ut esse consequat qui.

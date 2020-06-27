@@ -39,8 +39,11 @@ export default function GlobalContextProvider(props) {
       }}
     >
       {debug && <Debug />}
-      <GlobalStyle />
-      <ThemeProvider theme={palette}>{props.children}</ThemeProvider>
+
+      <ThemeProvider theme={palette}>
+        <GlobalStyle />
+        {props.children}
+      </ThemeProvider>
     </GlobalContext.Provider>
   );
 }

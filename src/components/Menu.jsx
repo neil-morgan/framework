@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import Router from "next/router";
 import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
@@ -15,10 +15,9 @@ export default function Menu() {
   return (
     <Nav>
       <Button to={"/"}>Home</Button>
-      <Button to={"/about"}>About</Button>
-      <Button to={"/"}>Foo</Button>
-      <Button to={"/"}>Bar</Button>
-      <Button to={"/"}>Baz</Button>
+      <Button to={"/leagues"}>About</Button>
+      <Button to={"/drivers"}>Drivers</Button>
+      <Button to={"/ARL"}>ARL</Button>
     </Nav>
   );
 }
@@ -83,3 +82,7 @@ const ButtonElement = styled.div`
     background: ${brightness(palette.primary, -5)};
   }
 `;
+
+Button.propTypes = {
+  to: PropTypes.string,
+};

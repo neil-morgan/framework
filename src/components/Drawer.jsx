@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import { useSwipeable } from "../hooks/use-swipeable";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
+import { Element } from "./Logo";
 import Menu from "./Menu";
 import Config from "../config";
 import utilities from "../utilities";
@@ -41,7 +42,12 @@ const Aside = styled.aside`
   transform: translate(25%, 0);
   display: flex;
   width: calc(${breakpoints.sm}rem);
-  background: ${brightness(palette.primary, -20)};
+  background: linear-gradient(
+    to bottom right,
+    ${({ theme }) => theme.background},
+    ${({ theme }) => brightness(theme.background, -6)} 100%
+  );
+
   @media only screen and (max-width: ${breakpoints.sm}rem) {
     width: 100%;
   }

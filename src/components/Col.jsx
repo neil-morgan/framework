@@ -20,7 +20,6 @@ const Col = styled.div`
   flex: 0 0 auto;
   flex-direction: column;
   padding:0 ${(props) => Config(props).gutterWidth / 2}rem;
-  ${(props) => console.log(props.pod)}
 
   ${(props) =>
     Object.keys(props)

@@ -53,6 +53,7 @@ html {
 body {
     overflow-x: hidden;
     overflow-y: scroll;
+    background: ${({ theme }) => theme.background};
 }
 
 button,
