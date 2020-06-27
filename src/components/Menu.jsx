@@ -15,7 +15,7 @@ export default function Menu() {
   return (
     <Nav>
       <Button to={"/"}>Home</Button>
-      <Button to={"/leagues"}>About</Button>
+      <Button to={"/leagues"}>Leagues</Button>
       <Button to={"/drivers"}>Drivers</Button>
       <Button to={"/ARL"}>ARL</Button>
     </Nav>
