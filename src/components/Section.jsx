@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Config from "../config";
 
-const { dimensions, palette } = Config();
+const { dimensions } = Config();
 const ModificatorType = PropTypes.oneOf(dimensions);
 
 const Section = styled.section`
@@ -35,38 +35,6 @@ const Section = styled.section`
       content: none;
     }
   `}
-
-  background: ${(props) => props.theme.background};
-  h1,
-  h2 {
-    color: ${(props) => props.theme.heading};
-  }
-  p {
-    color: ${(props) => props.theme.paragraph};
-  }
-  
-  ${(props) => {
-    if (props.invert) {
-      if (props.theme.mode === "light")
-        return `
-        background: ${palette.dark.background};
-        h1,
-        h2 {
-          color: ${palette.dark.heading};
-        }
-        p { color: ${palette.dark.paragraph};
-        }`;
-      else
-        return `
-        background: ${palette.light.background};
-        h1,
-        h2 {
-          color: ${palette.light.heading};
-        }
-        p { color: ${palette.light.paragraph};
-        }`;
-    }
-  }};
 `;
 
 Section.propTypes = {

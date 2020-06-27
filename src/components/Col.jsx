@@ -20,6 +20,7 @@ const Col = styled.div`
   flex: 0 0 auto;
   flex-direction: column;
   padding:0 ${(props) => Config(props).gutterWidth / 2}rem;
+  ${(props) => console.log(props.pod)}
 
   ${(props) =>
     Object.keys(props)
@@ -56,7 +57,6 @@ const Col = styled.div`
             margin-left: ${(100 / Config(props).gridSize) * props[key]}%;
         `
       )}
-
 
   ${(props) =>
     props.reverse &&

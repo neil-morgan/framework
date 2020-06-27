@@ -1,13 +1,10 @@
 import { css } from "styled-components";
-import utilities from "./utilities";
-
-const { brightness } = utilities;
 
 export const BASE_CONF = {
   debug: false,
   gridSize: 12,
   gutterWidth: 2,
-  outerMargin: 1.5,
+  outerMargin: 0.5,
   mediaQuery: "only screen",
   container: {
     sm: 60, // rem
@@ -44,22 +41,12 @@ export const BASE_CONF = {
 };
 
 const COLOR_PALETTE = {
-  primary: brightness(BASE_CONF.colors.pink, 20),
-  secondary: BASE_CONF.colors.blue,
+  primary: "#806CE9",
+  secondary: "xyz",
   tertiary: "xyz",
-
-  light: {
-    mode: "light",
-    heading: brightness(BASE_CONF.colors.grey, -50),
-    paragraph: brightness(BASE_CONF.colors.grey, -45),
-    background: brightness(BASE_CONF.colors.grey, 32),
-  },
-  dark: {
-    mode: "dark",
-    heading: brightness(BASE_CONF.colors.grey, 20),
-    paragraph: brightness(BASE_CONF.colors.grey, 10),
-    background: brightness(BASE_CONF.colors.grey, -45),
-  },
+  text: "#FFFFFF",
+  foreground: "#2F3238",
+  background: "#212327",
 };
 
 const DIMENSION_NAMES = ["xs", "sm", "md", "lg"];

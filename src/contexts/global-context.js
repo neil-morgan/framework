@@ -10,7 +10,6 @@ export const GlobalContext = createContext();
 
 export default function GlobalContextProvider(props) {
   const [drawerState, setDrawerState] = useState(false);
-  const [theme, setTheme] = useState("light");
 
   const drawerClose = () => {
     setDrawerState(!1);
@@ -30,10 +29,6 @@ export default function GlobalContextProvider(props) {
     }
   };
 
-  const themeToggle = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
-
   return (
     <GlobalContext.Provider
       value={{
@@ -45,12 +40,7 @@ export default function GlobalContextProvider(props) {
     >
       {debug && <Debug />}
       <GlobalStyle />
-      <ThemeProvider
-        theme={theme === "light" ? palette.light : palette.dark}
-        themeToggle={themeToggle}
-      >
-        {props.children}
-      </ThemeProvider>
+      <ThemeProvider theme={palette}>{props.children}</ThemeProvider>
     </GlobalContext.Provider>
   );
 }

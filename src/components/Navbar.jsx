@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
-import { Row, Col, Heading } from "..";
+import { Row, Col } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
 import Config from "../config";
+import utilities from "../utilities";
 
+const { brightness } = utilities;
 const { palette } = Config();
 
 export default function Navbar(props) {
@@ -31,6 +33,6 @@ const Nav = styled.nav`
   z-index: 1002;
   width: 100%;
   min-height: 5rem;
-  padding: 0 1rem;
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.foreground};
+  box-shadow: 0 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.2);
 `;

@@ -28,8 +28,8 @@ export default function Logo() {
 const Link = styled.a`
   cursor: pointer;
   height: 5rem;
-  width: 5.54rem;
-  padding: 1rem;
+  width: 4.5rem;
+  padding: 1.5rem 0.5rem;
   display: flex;
   z-index: 1002;
   -webkit-tap-highlight-color: transparent;

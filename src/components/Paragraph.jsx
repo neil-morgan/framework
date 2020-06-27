@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { fluidRange } from "polished";
 import Config from "../config";
 
-const { dimensions, colors } = Config();
+const { dimensions, palette } = Config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
@@ -11,8 +11,8 @@ const Root = styled.p`
   font-family: "Nunito";
   font-weight: 400;
   transition: all 500ms;
-  margin: 0 0 0.5em 0;
-  color: inherit;
+  margin: 0 0 1em 0;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Paragraph = styled(Root)`
@@ -131,7 +131,7 @@ export const Link = styled(Root).attrs({
   as: "a",
 })`
   font-weight: 600;
-  color: ${colors.blue};
+  color: ${palette.primary};
   &:hover {
     text-decoration: none;
   }

@@ -7,12 +7,11 @@ const { dimensions } = Config();
 
 const ModificatorType = PropTypes.oneOf(dimensions);
 
-const Root = css`
+const Root = styled.h1`
   font-family: 'Roboto';
   font-weight: 400;
   transition: all 500ms;
-  margin: 0 0 0.5em 0;
-  color: inherit;
+  color: ${({ theme }) => theme.text};
 
   ${(props) =>
     props.left &&
@@ -90,8 +89,8 @@ const Root = css`
   `}
 `;
 
-export const H1 = styled.h1`
-  ${Root};
+export const H1 = styled(Root)`
+  margin: 0 0 0.5em 0;
   ${fluidRange(
     {
       prop: "font-size",
@@ -103,8 +102,10 @@ export const H1 = styled.h1`
   )}
 `;
 
-export const H2 = styled.h2`
-  ${Root}
+export const H2 = styled(Root).attrs({
+  as: "h2",
+})`
+  margin: 0 0 1em 0;
   ${fluidRange(
     {
       prop: "font-size",

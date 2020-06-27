@@ -27,10 +27,10 @@ const Toggle = styled.a`
   align-self: flex-end;
   align-items: center;
   justify-content: center;
-  min-width: 5rem;
-  max-width: 5rem;
+  min-width: 3rem;
+  max-width: 3rem;
   min-height: 5rem;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   pointer-events: auto;
   cursor: pointer;
   z-index: 1002;
