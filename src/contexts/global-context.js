@@ -11,23 +11,23 @@ export const GlobalContext = createContext();
 export default function GlobalContextProvider(props) {
   const [drawerState, setDrawerState] = useState(false);
 
-  const drawerClose = () => {
+  function drawerClose() {
     setDrawerState(!1);
     utilities.DomUtils.enableScroll();
-  };
+  }
 
-  const drawerOpen = () => {
+  function drawerOpen() {
     setDrawerState(!0);
     utilities.DomUtils.disableScroll();
-  };
+  }
 
-  const drawerToggle = () => {
+  function drawerToggle() {
     if (true === drawerState) {
       drawerClose();
     } else {
       drawerOpen();
     }
-  };
+  }
 
   return (
     <GlobalContext.Provider

@@ -5,7 +5,7 @@ import { GlobalContext } from "../contexts/global-context";
 import Footer from "./Footer";
 import Config from "../config";
 
-const { breakpoints, palette } = Config();
+const { breakpoints } = Config();
 
 export default function Page({ children }) {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -90,7 +90,7 @@ const Main = styled.main`
     css`
       transform: translate(-${breakpoints.sm}rem, 0);
       @media only screen and (max-width: ${breakpoints.sm}rem) {
-        transform: translate(-100%, 0);
+        transform: translate(calc(-100% + 1px), 0);
       }
     `}
 `;

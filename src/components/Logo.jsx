@@ -2,9 +2,6 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
 import Router from "next/router";
-import Config from "../config";
-
-const { palette } = Config();
 
 export default function Logo() {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -45,6 +42,6 @@ export const Element = styled.a`
 export const Graphic = styled.svg`
   height: 100%;
   width: 100%;
-  fill: ${palette.primary};
+  fill: ${({ theme }) => theme.primary};
   transition: all 500ms cubic-bezier(0.75, 0, 0.25, 1);
 `;

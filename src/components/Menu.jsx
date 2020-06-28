@@ -25,8 +25,8 @@ export default function Menu() {
 function Button(props) {
   const { drawerClose } = useContext(GlobalContext);
   const handleClick = (href) => {
-    setTimeout(() => Router.push(href), 400),
-      setTimeout(() => drawerClose(), 150);
+    setTimeout(() => Router.push(href), 500),
+      setTimeout(() => drawerClose(), 100);
   };
   return (
     <ButtonElement onClick={() => handleClick(props.to)} props={props}>
