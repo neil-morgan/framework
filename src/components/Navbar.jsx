@@ -7,6 +7,7 @@ import { Row, Col } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
 import Spinner from "./Spinner";
+import Icon from "./Icon";
 
 export default function Navbar() {
   const { drawerState } = useContext(GlobalContext);
@@ -62,4 +63,8 @@ export const HomeLink = styled.a`
   user-select: none;
   outline: none;
   pointer-events: auto;
+`;
+
+const ButtonIcon = styled.span`
+  width: 1.5em;
 `;

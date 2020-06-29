@@ -1,15 +1,11 @@
 import { useContext, useRef } from "react";
 import { useSwipeable } from "../hooks/use-swipeable";
-import Router from "next/router";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
-import Logo from "./Logo";
 import Menu from "./Menu";
-import Config from "../config";
 import utilities from "../utilities";
 
 const { brightness } = utilities;
-const { breakpoints } = Config();
 
 export default function Global() {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -21,12 +17,6 @@ export default function Global() {
     preventDefaultTouchmoveEvent: true,
     trackMouse: false,
   });
-
-  const handleClick = (e) => {
-    drawerState
-      ? (setTimeout(() => Router.push(e), 350), drawerClose())
-      : Router.push(e);
-  };
 
   return (
     <Aside ref={node} drawerState={drawerState} {...handlers}>

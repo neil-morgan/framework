@@ -23,7 +23,7 @@ export default function Menu() {
       <Button to={"/leagues"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Icon.Leagues />
+            <Icon.Trophy />
           </ButtonIcon>
           Leagues
         </ButtonTitle>
@@ -31,7 +31,7 @@ export default function Menu() {
       <Button to={"/drivers"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Icon.Drivers />
+            <Icon.Driver />
           </ButtonIcon>
           Drivers
         </ButtonTitle>
@@ -39,9 +39,34 @@ export default function Menu() {
       <Button to={"/ARL"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Icon.ARL />
+            <Icon.Star />
           </ButtonIcon>
           ARL
+        </ButtonTitle>
+      </Button>
+      <Divider />
+      <Button to={"/schedule"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Calendar />
+          </ButtonIcon>
+          Schedule
+        </ButtonTitle>
+      </Button>
+      <Button to={"/results"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Rocket />
+          </ButtonIcon>
+          Results
+        </ButtonTitle>
+      </Button>
+      <Button to={"/stats"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Chart />
+          </ButtonIcon>
+          Stats
         </ButtonTitle>
       </Button>
     </Nav>
@@ -68,17 +93,7 @@ const Nav = styled.nav`
   flex-direction: column;
   align-self: flex-start;
   width: 100%;
-  padding: 3rem 0 1.5rem;
-  margin: 0 0 1.5rem;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 2rem;
-    left: 2rem;
-    height: 0.2rem;
-    background: ${({ theme }) => theme.background};
-  }
+  padding: 3rem 0;
 `;
 
 const ButtonElement = styled.div`
@@ -136,12 +151,19 @@ const ButtonTitle = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  max-width: 15rem;
+  max-width: 16em;
 `;
 
 const ButtonIcon = styled.span`
   width: 1.5em;
   margin: 0 0.75em 0 0;
+`;
+
+const Divider = styled.hr`
+  border: none;
+  height: 0.2rem;
+  margin: 1.5rem 0 3rem;
+  background: ${({ theme }) => theme.background};
 `;
 
 Button.propTypes = {
