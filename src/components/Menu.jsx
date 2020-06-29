@@ -63,11 +63,22 @@ function Button(props) {
 }
 
 const Nav = styled.nav`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   width: 100%;
-  margin: 3rem 0;
+  padding: 3rem 0 1.5rem;
+  margin: 0 0 1.5rem;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    left: 2rem;
+    height: 0.2rem;
+    background: ${({ theme }) => theme.background};
+  }
 `;
 
 const ButtonElement = styled.div`
@@ -99,7 +110,7 @@ const ButtonElement = styled.div`
   font-size: ${fluidRange(
     {
       prop: "font-size",
-      fromSize: "18px",
+      fromSize: "22px",
       toSize: "24px",
     },
     "320px",
@@ -123,15 +134,14 @@ const ButtonElement = styled.div`
 const ButtonTitle = styled.div`
   display: flex;
   align-items: center;
-  height: 1em;
+  height: 100%;
   width: 100%;
-  max-width: 14rem;
+  max-width: 15rem;
 `;
 
 const ButtonIcon = styled.span`
-  height: 1em;
-  width: 1em;
-  margin: 0 0.5em 0 0;
+  width: 1.5em;
+  margin: 0 0.75em 0 0;
 `;
 
 Button.propTypes = {

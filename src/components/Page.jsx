@@ -87,10 +87,7 @@ const Main = styled.main`
   ${({ drawerState }) =>
     drawerState &&
     css`
-      transform: translate(-${breakpoints.sm}rem, 0);
-      @media only screen and (max-width: ${breakpoints.sm}rem) {
-        transform: translate(calc(-100% + 0.1px), 0);
-      }
+      transform: translate(-30rem, 0);
     `}
 `;
 

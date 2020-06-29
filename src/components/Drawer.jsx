@@ -44,17 +44,14 @@ const Aside = styled.aside`
   bottom: 0;
   right: 0;
   height: calc(100vh + 5rem);
-  padding: 5rem 0 12rem;
+  padding: 5rem 4rem 12rem;
   transform-origin: right;
   transition: all 500ms;
   transform: translate(25%, 0);
   display: flex;
-  width: calc(${breakpoints.sm}rem);
+  width: 30rem;
   background: ${({ theme }) => brightness(theme.background, -6)};
 
-  @media only screen and (max-width: ${breakpoints.sm}rem) {
-    width: 100%;
-  }
   ${({ drawerState }) =>
     drawerState &&
     css`
