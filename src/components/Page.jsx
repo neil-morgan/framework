@@ -90,7 +90,7 @@ const Main = styled.main`
     css`
       transform: translate(-${breakpoints.sm}rem, 0);
       @media only screen and (max-width: ${breakpoints.sm}rem) {
-        transform: translate(calc(-100% + 1px), 0);
+        transform: translate(calc(-100% + 0.1px), 0);
       }
     `}
 `;
