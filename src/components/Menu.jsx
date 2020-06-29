@@ -105,6 +105,7 @@ const ButtonElement = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  max-height: 5.5rem;
   cursor: pointer;
   display: inline-flex;
   text-decoration: none;
