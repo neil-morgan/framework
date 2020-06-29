@@ -7,7 +7,7 @@ import Logo from "../components/Logo";
 import Burger from "./Burger";
 import Spinner from "./Spinner";
 
-export default function Navbar(props) {
+export default function Navbar() {
   const { drawerState } = useContext(GlobalContext);
 
   return (
@@ -35,5 +35,5 @@ const Nav = styled.nav`
   width: 100%;
   min-height: 5rem;
   background: ${({ theme }) => theme.foreground};
-  box-shadow: 0 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.2);
+  border-bottom: solid 0.2rem ${({ theme }) => theme.background};
 `;

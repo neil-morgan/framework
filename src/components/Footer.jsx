@@ -23,9 +23,5 @@ export default function Footer() {
 }
 
 const FooterElement = styled(Section)`
-  background: linear-gradient(
-    to bottom right,
-    ${({ theme }) => theme.primary},
-    ${({ theme }) => brightness(theme.primary, -25)} 100%
-  );
+  background: ${({ theme }) => brightness(theme.primary, -10)};
 `;
