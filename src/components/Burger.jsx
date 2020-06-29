@@ -24,7 +24,6 @@ export default function Burger() {
 }
 
 const Toggle = styled.a`
-  align-self: flex-end;
   align-items: center;
   justify-content: center;
   min-width: 3rem;

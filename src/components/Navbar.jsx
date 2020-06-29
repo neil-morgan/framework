@@ -1,17 +1,15 @@
 import { useContext } from "react";
 import styled from "styled-components";
+import usePageLoading from "../hooks/use-page-loading";
 import { GlobalContext } from "../contexts/global-context";
 import { Row, Col } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
-import Config from "../config";
-import utilities from "../utilities";
-
-const { brightness } = utilities;
-const { palette } = Config();
+import Spinner from "./Spinner";
 
 export default function Navbar(props) {
   const { drawerState } = useContext(GlobalContext);
+
   return (
     <Nav drawerState={drawerState}>
       <Row>
@@ -19,7 +17,10 @@ export default function Navbar(props) {
           <Logo />
         </Col>
         <Col xs={6}>
-          <Burger />
+          <Row end="xs">
+            {usePageLoading() && <Spinner />}
+            <Burger />
+          </Row>
         </Col>
       </Row>
     </Nav>

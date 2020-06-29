@@ -21,67 +21,67 @@ const Row = styled.div`
 
   ${(props) =>
     props.column &&
-    config(props).media[props.column]`
+    Config(props).media[props.column]`
     flex-direction: column;
   `}
 
   ${(props) =>
     props.start &&
-    config(props).media[props.start]`
+    Config(props).media[props.start]`
     justify-content: flex-start;
   `}
 
   ${(props) =>
     props.center &&
-    config(props).media[props.center]`
+    Config(props).media[props.center]`
     justify-content: center;
   `}
 
   ${(props) =>
     props.end &&
-    config(props).media[props.end]`
+    Config(props).media[props.end]`
     justify-content: flex-end;
   `}
 
   ${(props) =>
     props.top &&
-    config(props).media[props.top]`
+    Config(props).media[props.top]`
     align-items: flex-start;
   `}
 
   ${(props) =>
     props.middle &&
-    config(props).media[props.middle]`
+    Config(props).media[props.middle]`
     align-items: center;
   `}
 
   ${(props) =>
     props.bottom &&
-    config(props).media[props.bottom]`
+    Config(props).media[props.bottom]`
     align-items: flex-end;
   `}
 
   ${(props) =>
     props.around &&
-    config(props).media[props.around]`
+    Config(props).media[props.around]`
     justify-content: space-around;
   `}
 
   ${(props) =>
     props.between &&
-    config(props).media[props.between]`
+    Config(props).media[props.between]`
     justify-content: space-between;
   `}
 
   ${(props) =>
     props.first &&
-    config(props).media[props.first]`
+    Config(props).media[props.first]`
     order: -1;
   `}
 
   ${(props) =>
     props.last &&
-    config(props).media[props.last]`
+    Config(props).media[props.last]`
     order: 1;
   `}
 `;
