@@ -1,14 +1,15 @@
 import { useContext, useRef } from "react";
 import { useSwipeable } from "../hooks/use-swipeable";
+import Router from "next/router";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
-import { Element } from "./Logo";
+import Logo from "./Logo";
 import Menu from "./Menu";
 import Config from "../config";
 import utilities from "../utilities";
 
 const { brightness } = utilities;
-const { breakpoints, palette } = Config();
+const { breakpoints } = Config();
 
 export default function Global() {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -20,8 +21,20 @@ export default function Global() {
     preventDefaultTouchmoveEvent: true,
     trackMouse: false,
   });
+
+  const handleClick = (e) => {
+    drawerState
+      ? (setTimeout(() => Router.push(e), 350), drawerClose())
+      : Router.push(e);
+  };
+
   return (
     <Aside ref={node} drawerState={drawerState} {...handlers}>
+      <LogoContainer>
+        <LogoLink onClick={() => handleClick("/")}>
+          <Logo />
+        </LogoLink>
+      </LogoContainer>
       <Menu />
     </Aside>
   );
@@ -56,4 +69,18 @@ const Aside = styled.aside`
     css`
       transform: translate(0, 0);
     `}
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+`;
+const LogoLink = styled.a`
+  cursor: pointer;
+  height: 6rem;
+  width: 9rem;
+  padding: 1rem 0;
 `;

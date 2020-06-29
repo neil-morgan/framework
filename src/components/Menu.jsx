@@ -50,6 +50,7 @@ const ButtonElement = styled.div`
   display: inline-flex;
   text-decoration: none;
   padding: 0.5em 1em;
+  margin: 0 0 0.2rem;
   border: none;
   position: relative;
   overflow: hidden;
