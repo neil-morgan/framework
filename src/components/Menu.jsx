@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Router from "next/router";
 import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
@@ -12,6 +12,17 @@ import utilities from "../utilities";
 const { brightness } = utilities;
 
 export default function Menu() {
+  useEffect(() => {
+    // Prefetch the dashboard page as the user will go there after the login
+    Router.prefetch("/");
+    Router.prefetch("/leagues");
+    Router.prefetch("/drivers");
+    Router.prefetch("/ARL");
+    Router.prefetch("/schedule");
+    Router.prefetch("/results");
+    Router.prefetch("/stats");
+  }, []);
+
   return (
     <Nav>
       <Button to={"/"}>
@@ -159,7 +170,7 @@ const ButtonTitle = styled.div`
 `;
 
 const ButtonIcon = styled.span`
-  width: 1.5em;
+  width: 1.1em;
   margin: 0 0.75em 0 0;
 `;
 

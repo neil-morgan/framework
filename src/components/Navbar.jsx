@@ -9,7 +9,7 @@ import Burger from "./Burger";
 import Spinner from "./Spinner";
 
 export default function Navbar() {
-  const { drawerState } = useContext(GlobalContext);
+  const { drawerState, drawerClose } = useContext(GlobalContext);
 
   const handleClick = (e) => {
     drawerState
