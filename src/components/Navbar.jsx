@@ -7,7 +7,6 @@ import { Row, Col } from "..";
 import Logo from "../components/Logo";
 import Burger from "./Burger";
 import Spinner from "./Spinner";
-import Icon from "./Icon";
 
 export default function Navbar() {
   const { drawerState } = useContext(GlobalContext);

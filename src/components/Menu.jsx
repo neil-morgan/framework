@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { fluidRange } from "polished";
 import Icon from "./Icon";
 import Ripple from "./Ripple";
+import Divider from "./Divider";
+import Social from "./Social";
 import utilities from "../utilities";
 const { brightness } = utilities;
 
@@ -69,6 +71,8 @@ export default function Menu() {
           Stats
         </ButtonTitle>
       </Button>
+      <Divider />
+      <Social />
     </Nav>
   );
 }
@@ -105,7 +109,6 @@ const ButtonElement = styled.div`
   display: inline-flex;
   text-decoration: none;
   padding: 0.5em 1em;
-  margin: 0 0 0.5em;
   border: none;
   position: relative;
   overflow: hidden;
@@ -157,13 +160,6 @@ const ButtonTitle = styled.div`
 const ButtonIcon = styled.span`
   width: 1.5em;
   margin: 0 0.75em 0 0;
-`;
-
-const Divider = styled.hr`
-  border: none;
-  height: 0.2rem;
-  margin: 1.5rem 0 3rem;
-  background: ${({ theme }) => theme.background};
 `;
 
 Button.propTypes = {
