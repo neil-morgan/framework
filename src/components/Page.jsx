@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
 import Footer from "./Footer";
-import Config from "../config";
-
-const { breakpoints } = Config();
 
 export default function Page({ children }) {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -57,7 +54,7 @@ export default function Page({ children }) {
 
   return (
     <Main drawerState={drawerState}>
-      <Body
+      <Content
         ref={node}
         variants={variants}
         transition={transition}
@@ -67,7 +64,7 @@ export default function Page({ children }) {
       >
         {children}
         <Footer />
-      </Body>
+      </Content>
     </Main>
   );
 }
@@ -76,7 +73,9 @@ const Main = styled.main`
   position: absolute;
   z-index: 10;
   width: 100%;
-  top: 5rem;
+
+  padding: 5rem 0 0;
+  top: 0;
   right: 0;
   left: 0;
   transform: translate(0, 0);
@@ -91,7 +90,9 @@ const Main = styled.main`
     `}
 `;
 
-const Body = styled(motion.div)`
+const Content = styled(motion.div)`
   position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 10;
 `;

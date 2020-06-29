@@ -24,4 +24,5 @@ export default function Footer() {
 
 const FooterElement = styled(Section)`
   background: ${({ theme }) => brightness(theme.primary, -15)};
+  margin: auto 0 0;
 `;

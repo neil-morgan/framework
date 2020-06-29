@@ -15,76 +15,76 @@ const Root = styled.h1`
 
   ${(props) =>
     props.left &&
-    config(props).media[props.left]`
+    Config(props).media[props.left]`
     text-align: left;
   `}
 
   ${(props) =>
     props.center &&
-    config(props).media[props.center]`
+    Config(props).media[props.center]`
     text-align: center;
   `}
 
   ${(props) =>
     props.right &&
-    config(props).media[props.right]`
+    Config(props).media[props.right]`
     text-align: right;
   `}
 
   ${(props) =>
     props.my0 &&
-    config(props).media[props.my0]`
+    Config(props).media[props.my0]`
     margin-top: 0;
     margin-bottom: 0;
   `}
 
   ${(props) =>
     props.my1 &&
-    config(props).media[props.my1]`
+    Config(props).media[props.my1]`
     margin-top: 0.25em;
     margin-bottom: 0.25em;
   `}
 
   ${(props) =>
     props.my2 &&
-    config(props).media[props.my2]`
+    Config(props).media[props.my2]`
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   `}
 
   ${(props) =>
     props.mt0 &&
-    config(props).media[props.mt0]`
+    Config(props).media[props.mt0]`
     margin-top: 0;
   `}
 
   ${(props) =>
     props.mt1 &&
-    config(props).media[props.mt1]`
+    Config(props).media[props.mt1]`
     margin-top: 0.25em;
   `}
 
   ${(props) =>
     props.mt2 &&
-    config(props).media[props.mt2]`
+    Config(props).media[props.mt2]`
     margin-top: 0.5em;
   `}
 
   ${(props) =>
     props.mb0 &&
-    config(props).media[props.mb0]`
+    Config(props).media[props.mb0]`
     margin-bottom: 0;
   `}
 
   ${(props) =>
     props.mb1 &&
-    config(props).media[props.mb1]`
+    Config(props).media[props.mb1]`
     margin-bottom: 0.25em;
   `}
 
   ${(props) =>
     props.mb2 &&
-    config(props).media[props.mb2]`
+    Config(props).media[props.mb2]`
     margin-bottom: 0.5em;
   `}
 `;

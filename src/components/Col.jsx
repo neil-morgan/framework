@@ -16,9 +16,11 @@ const DimensionPropTypes = dimensions.reduce((propTypes, dimension) => {
 }, {});
 
 const Col = styled.div`
+  position:relative;
   box-sizing: border-box;
   flex: 0 0 auto;
   flex-direction: column;
+  min-height:1px;
   padding:0 ${(props) => Config(props).gutterWidth / 2}rem;
 
   ${(props) =>
@@ -63,7 +65,6 @@ const Col = styled.div`
       flex-direction: column-reverse;
     `}
   
-
   ${(props) =>
     props.first &&
     Config(props).media[props.first]`
@@ -72,8 +73,14 @@ const Col = styled.div`
 
   ${(props) =>
     props.last &&
-    config(props).media[props.last]`
+    Config(props).media[props.last]`
     order: 13;
+  `}
+
+  ${(props) =>
+    props.nospace &&
+    `
+    padding: 0;
   `}
 
 `;

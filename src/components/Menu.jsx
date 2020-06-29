@@ -13,7 +13,6 @@ const { brightness } = utilities;
 
 export default function Menu() {
   useEffect(() => {
-    // Prefetch the dashboard page as the user will go there after the login
     Router.prefetch("/");
     Router.prefetch("/leagues");
     Router.prefetch("/drivers");
