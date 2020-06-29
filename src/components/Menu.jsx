@@ -4,20 +4,46 @@ import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fluidRange } from "polished";
+import Icon from "./Icon";
 import Ripple from "./Ripple";
 import utilities from "../utilities";
-import Config from "../config";
-
 const { brightness } = utilities;
-const { palette } = Config();
 
 export default function Menu() {
   return (
     <Nav>
-      <Button to={"/"}>Home</Button>
-      <Button to={"/leagues"}>Leagues</Button>
-      <Button to={"/drivers"}>Drivers</Button>
-      <Button to={"/ARL"}>ARL</Button>
+      <Button to={"/"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Home />
+          </ButtonIcon>
+          Home
+        </ButtonTitle>
+      </Button>
+      <Button to={"/leagues"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Leagues />
+          </ButtonIcon>
+          Leagues
+        </ButtonTitle>
+      </Button>
+      <Button to={"/drivers"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.Drivers />
+          </ButtonIcon>
+          Drivers
+        </ButtonTitle>
+      </Button>
+      <Button to={"/ARL"}>
+        <ButtonTitle>
+          <ButtonIcon>
+            <Icon.ARL />
+          </ButtonIcon>
+          ARL
+        </ButtonTitle>
+      </Button>
     </Nav>
   );
 }
@@ -39,10 +65,13 @@ function Button(props) {
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-self: flex-start;
+  width: 100%;
+  margin: 3rem 0;
 `;
 
 const ButtonElement = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -50,11 +79,10 @@ const ButtonElement = styled.div`
   display: inline-flex;
   text-decoration: none;
   padding: 0.5em 1em;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.5em;
   border: none;
   position: relative;
   overflow: hidden;
-  background: ${palette.primary};
   color: #fff;
   padding: 1rem 3rem 0.75rem;
   letter-spacing: 0.1rem;
@@ -79,9 +107,31 @@ const ButtonElement = styled.div`
   )};
   font-weight: normal;
   text-align: center;
+  transition: all 250ms;
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => brightness(theme.background, -6)} 10%,
+    transparent 50%,
+    ${({ theme }) => brightness(theme.background, -6)} 90%
+  );
+  background-color: transparent;
   &:hover {
-    background: ${brightness(palette.primary, -5)};
+    background-color: ${({ theme }) => brightness(theme.background, 5)};
   }
+`;
+
+const ButtonTitle = styled.div`
+  display: flex;
+  align-items: center;
+  height: 1em;
+  width: 100%;
+  max-width: 14rem;
+`;
+
+const ButtonIcon = styled.span`
+  height: 1em;
+  width: 1em;
+  margin: 0 0.5em 0 0;
 `;
 
 Button.propTypes = {

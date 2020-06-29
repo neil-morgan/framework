@@ -13,4 +13,5 @@ export const Graphic = styled.svg`
   height: 100%;
   width: 100%;
   fill: ${({ theme }) => theme.primary};
+  transition: all 500ms cubic-bezier(0.75, 0, 0.25, 1);
 `;

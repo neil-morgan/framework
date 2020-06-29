@@ -30,19 +30,14 @@ export default function Global() {
 
   return (
     <Aside ref={node} drawerState={drawerState} {...handlers}>
-      <LogoContainer>
-        <LogoLink onClick={() => handleClick("/")}>
-          <Logo />
-        </LogoLink>
-      </LogoContainer>
       <Menu />
     </Aside>
   );
 }
 
 const Aside = styled.aside`
+  display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   z-index: 9;
   position: fixed;
   top: 0;
@@ -55,11 +50,7 @@ const Aside = styled.aside`
   transform: translate(25%, 0);
   display: flex;
   width: calc(${breakpoints.sm}rem);
-  background: linear-gradient(
-    to bottom right,
-    ${({ theme }) => theme.background},
-    ${({ theme }) => brightness(theme.background, -6)} 100%
-  );
+  background: ${({ theme }) => brightness(theme.background, -6)};
 
   @media only screen and (max-width: ${breakpoints.sm}rem) {
     width: 100%;
@@ -69,18 +60,4 @@ const Aside = styled.aside`
     css`
       transform: translate(0, 0);
     `}
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-  margin: 1rem 0 1.5rem;
-`;
-const LogoLink = styled.a`
-  cursor: pointer;
-  height: 6rem;
-  width: 9rem;
-  padding: 1rem 0;
 `;

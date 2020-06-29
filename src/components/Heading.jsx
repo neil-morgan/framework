@@ -89,7 +89,7 @@ const Root = styled.h1`
   `}
 `;
 
-export const H1 = styled(Root)`
+const H1 = styled(Root)`
   margin: 0 0 0.5em 0;
   ${fluidRange(
     {
@@ -102,7 +102,7 @@ export const H1 = styled(Root)`
   )}
 `;
 
-export const H2 = styled(Root).attrs({
+const H2 = styled(Root).attrs({
   as: "h2",
 })`
   margin: 0 0 1em 0;

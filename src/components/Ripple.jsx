@@ -19,7 +19,7 @@ function useDebouncedRippleCleanUp(rippleCount, duration, cleanUpFunction) {
 
 export default function Ripple({
   duration = 500,
-  color = "rgba(000, 000, 000, 0.25)",
+  color = "rgba(255, 255, 255, 0.15)",
 }) {
   const [rippleArray, setRippleArray] = useState([]);
   useDebouncedRippleCleanUp(rippleArray.length, duration, () => {

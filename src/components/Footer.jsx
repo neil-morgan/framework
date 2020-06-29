@@ -23,5 +23,5 @@ export default function Footer() {
 }
 
 const FooterElement = styled(Section)`
-  background: ${({ theme }) => brightness(theme.primary, -10)};
+  background: ${({ theme }) => brightness(theme.primary, -15)};
 `;
