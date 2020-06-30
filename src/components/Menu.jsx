@@ -9,6 +9,9 @@ import Ripple from "./Ripple";
 import Divider from "./Divider";
 import Social from "./Social";
 import utilities from "../utilities";
+import Config from "../config";
+
+const { breakpoints } = Config();
 const { brightness } = utilities;
 
 export default function Menu() {
@@ -90,8 +93,14 @@ export default function Menu() {
 function Button(props) {
   const { drawerClose } = useContext(GlobalContext);
   const handleClick = (href) => {
-    setTimeout(() => Router.push(href), 500),
-      setTimeout(() => drawerClose(), 100);
+    if (window.innerWidth < breakpoints.lg * 16) {
+      setTimeout(() => Router.push(href), 500),
+        setTimeout(() => drawerClose(), 100);
+    } else {
+      console.log("true");
+      Router.push(href);
+      drawerClose();
+    }
   };
   return (
     <ButtonElement onClick={() => handleClick(props.to)} props={props}>

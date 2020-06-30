@@ -13,7 +13,6 @@ const { brightness } = utilities;
 const { breakpoints } = Config();
 
 export default function Button(props) {
-  console.log(props);
   const [mouseIsHovering, setMouseIsHovering] = useState(false);
   const [buttonIsDown, setButtonIsDown] = useState(false);
   const { drawerClose } = useContext(GlobalContext);
