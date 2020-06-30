@@ -20,12 +20,6 @@ const Row = styled.div`
   `}
 
   ${(props) =>
-    props.column &&
-    Config(props).media[props.column]`
-    flex-direction: column;
-  `}
-
-  ${(props) =>
     props.start &&
     Config(props).media[props.start]`
     justify-content: flex-start;

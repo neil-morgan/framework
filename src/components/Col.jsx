@@ -22,6 +22,7 @@ const Col = styled.div`
   flex-direction: column;
   min-height:1px;
   padding:0 ${(props) => Config(props).gutterWidth / 2}rem;
+  ${(props) => props.flush && `padding: 0;`}
 
   ${(props) =>
     Object.keys(props)
@@ -66,6 +67,54 @@ const Col = styled.div`
     `}
   
   ${(props) =>
+    props.start &&
+    Config(props).media[props.start]`
+    justify-content: flex-start;
+  `}
+
+  ${(props) =>
+    props.middle &&
+    Config(props).media[props.middle]`
+    justify-content: center;
+  `}
+
+  ${(props) =>
+    props.end &&
+    Config(props).media[props.end]`
+    justify-content: flex-end;
+  `}
+
+  ${(props) =>
+    props.center &&
+    Config(props).media[props.center]`
+    align-items: center;
+  `}
+
+  ${(props) =>
+    props.left &&
+    Config(props).media[props.left]`
+    align-items: flex-start;
+  `}
+
+  ${(props) =>
+    props.right &&
+    Config(props).media[props.right]`
+    align-items: flex-end;
+  `}
+
+  ${(props) =>
+    props.around &&
+    Config(props).media[props.around]`
+    justify-content: space-around;
+  `}
+
+  ${(props) =>
+    props.between &&
+    Config(props).media[props.between]`
+    justify-content: space-between;
+  `}
+
+  ${(props) =>
     props.first &&
     Config(props).media[props.first]`
     order: -1;
@@ -74,15 +123,8 @@ const Col = styled.div`
   ${(props) =>
     props.last &&
     Config(props).media[props.last]`
-    order: 13;
+    order: 1;
   `}
-
-  ${(props) =>
-    props.nospace &&
-    `
-    padding: 0;
-  `}
-
 `;
 
 Col.displayName = "Col";

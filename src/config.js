@@ -9,7 +9,7 @@ export const BASE_CONF = {
   container: {
     sm: 60, // rem
     md: 80, // rem
-    lg: 110, // rem
+    lg: 111, // rem
   },
   breakpoints: {
     xs: 0, // em
@@ -42,7 +42,7 @@ export const BASE_CONF = {
 
 const COLOR_PALETTE = {
   primary: "#806CE9",
-  secondary: "xyz",
+  secondary: "#5FBBE8",
   tertiary: "xyz",
   text: "#FFFFFF",
   foreground: "#2F3238",

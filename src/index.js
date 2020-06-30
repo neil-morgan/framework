@@ -5,6 +5,8 @@ import Col from "./components/Col";
 import Pod from "./components/Pod";
 import Heading from "./components/Heading";
 import Paragraph, { Small, Link, Bold } from "./components/Paragraph";
+import Button from "./components/Button";
+import Ripple from "./components/Ripple";
 import config from "./config";
 
 export {
@@ -18,5 +20,7 @@ export {
   Small,
   Link,
   Bold,
+  Button,
+  Ripple,
   config,
 };
