@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
 import Config from "../config";
 
-const { palette } = Config();
+const { palette, breakpoints } = Config();
 
 export default function Burger() {
   const { themeState, drawerState, drawerToggle } = useContext(GlobalContext);
@@ -33,7 +33,7 @@ const Toggle = styled.a`
   pointer-events: auto;
   cursor: pointer;
   z-index: 1002;
-  display: flex;
+  display: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -42,6 +42,9 @@ const Toggle = styled.a`
   -ms-user-select: none;
   user-select: none;
   outline: none;
+  @media only screen and (max-width: ${breakpoints.lg}rem) {
+    display: flex;
+  }
 `;
 
 const Bars = styled.div`

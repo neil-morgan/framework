@@ -4,7 +4,9 @@ import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
 import Menu from "./Menu";
 import utilities from "../utilities";
+import Config from "../config";
 
+const { breakpoints } = Config();
 const { brightness } = utilities;
 
 export default function Global() {
@@ -37,14 +39,17 @@ const Aside = styled.aside`
   padding: 5rem 4rem 12rem;
   transform-origin: right;
   transition: all 500ms;
-  transform: translate(25%, 0);
+  transform: translate(0, 0);
   display: flex;
   width: 30rem;
   background: ${({ theme }) => brightness(theme.background, -6)};
 
-  ${({ drawerState }) =>
-    drawerState &&
-    css`
-      transform: translate(0, 0);
-    `}
+  @media only screen and (max-width: ${breakpoints.lg}rem) {
+    transform: translate(25%, 0);
+    ${({ drawerState }) =>
+      drawerState &&
+      css`
+        transform: translate(0, 0);
+      `}
+  }
 `;

@@ -7,15 +7,15 @@ export const BASE_CONF = {
   outerMargin: 0.5,
   mediaQuery: "only screen",
   container: {
-    sm: 60, // rem
-    md: 80, // rem
+    sm: 75, // rem
+    md: 111, // rem
     lg: 111, // rem
   },
   breakpoints: {
     xs: 0, // em
-    sm: 40, // em
-    md: 53, // em
-    lg: 75, // em
+    sm: 50, // em
+    md: 75, // em
+    lg: 100, // em
   },
   colors: {
     red: "#f44336",
@@ -42,7 +42,7 @@ export const BASE_CONF = {
 
 const COLOR_PALETTE = {
   primary: "#806CE9",
-  secondary: "#5FBBE8",
+  secondary: "#4C94EB",
   tertiary: "xyz",
   text: "#FFFFFF",
   foreground: "#2F3238",

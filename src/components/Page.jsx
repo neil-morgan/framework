@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
 import Footer from "./Footer";
+import Config from "../config";
+
+const { breakpoints } = Config();
 
 export default function Page({ children }) {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -72,8 +75,7 @@ export default function Page({ children }) {
 const Main = styled.main`
   position: absolute;
   z-index: 10;
-  width: 100%;
-
+  width: calc(100% - 30rem);
   padding: 5rem 0 0;
   top: 0;
   right: 0;
@@ -82,12 +84,14 @@ const Main = styled.main`
   transition: all 500ms;
   transform-origin: right;
   background: ${({ theme }) => theme.background};
-
-  ${({ drawerState }) =>
-    drawerState &&
-    css`
-      transform: translate(-30rem, 0);
-    `}
+  @media only screen and (max-width: ${breakpoints.lg}rem) {
+    width: 100%;
+    ${({ drawerState }) =>
+      drawerState &&
+      css`
+        transform: translate(-30rem, 0);
+      `}
+  }
 `;
 
 const Content = styled(motion.div)`
@@ -96,3 +100,7 @@ const Content = styled(motion.div)`
   flex-direction: column;
   z-index: 10;
 `;
+
+// @media only screen and (max-width: ${breakpoints.sm}rem) {
+//   padding: 1.5rem;
+// }

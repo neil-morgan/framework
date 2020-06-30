@@ -38,10 +38,8 @@ export default function NextRace() {
             <Row between="xs">
               <Col xs={9} sm={8} md={6}>
                 <Heading.H2 mb0="xs">{tempData.title}</Heading.H2>
-                <Paragraph>
-                  <StartDate>Starts in {tempData.time}</StartDate>
-                </Paragraph>
-                <Description />
+                <StartDate>Starts in {tempData.time}</StartDate>
+                <Paragraph>{tempData.description}</Paragraph>
               </Col>
               <Col xs={3} sm={4}>
                 <Track />
@@ -58,8 +56,6 @@ export default function NextRace() {
     </Section>
   );
 }
-
-const Description = () => <Paragraph>{tempData.description}</Paragraph>;
 
 const Track = () => (
   <Graphic viewBox="0 0 300 253.6">
@@ -89,14 +85,13 @@ const Race = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   padding: 3rem;
-  background: ${({ theme }) => theme.foreground};
-
   background: linear-gradient(
       to bottom right,
       ${({ theme }) => brightness(theme.primary, -20)},
       ${({ theme }) => opacity(brightness(theme.primary, -20), 50)}
     ),
     center / cover no-repeat url("images/placeholder.jpg");
+
   @media only screen and (max-width: ${breakpoints.sm}rem) {
     padding: 1.5rem;
   }
@@ -123,6 +118,7 @@ const Graphic = styled.svg`
   }
 `;
 
-const StartDate = styled(Bold)`
-  color: ${({ theme }) => theme.secondary};
+const StartDate = styled(Paragraph)`
+  color: ${({ theme }) => brightness(theme.secondary, 15)};
+  font-weight: bold;
 `;
