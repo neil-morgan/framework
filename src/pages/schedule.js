@@ -1,12 +1,12 @@
 import Page from "../components/Page";
-import RecentRaces from "../modules/RecentRaces";
-import PastRaces from "../modules/PastRaces";
+import NextRace from "../modules/NextRace";
+import UpcomingRaces from "../modules/UpcomingRaces";
 
 export default function Schedule() {
   return (
     <Page>
-      <RecentRaces />
-      <PastRaces />
+      <NextRace />
+      <UpcomingRaces />
     </Page>
   );
 }

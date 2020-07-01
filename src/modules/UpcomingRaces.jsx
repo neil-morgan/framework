@@ -1,3 +1,7 @@
+import styled from "styled-components";
+import utilities from "../utilities";
+import Config from "../config";
+
 import {
   Section,
   Container,
@@ -9,7 +13,11 @@ import {
   Small,
   Bold,
   Link,
+  Button,
 } from "..";
+
+const { breakpoints } = Config();
+const { brightness } = utilities;
 
 export default function UpcomingRaces() {
   return (
@@ -18,61 +26,83 @@ export default function UpcomingRaces() {
         <Col xs>
           <Heading.H1>Upcoming Races</Heading.H1>
         </Col>
+
         <Col xs>
           <Pod>
-            <Heading.H2>League | Track | Position</Heading.H2>
-            <Paragraph>
-              Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}
-              <Small>This is small text</Small> pariatur ut esse consequat qui.
-              Amet duis deserunt id ullamco officia fugiat mollit culpa pariatur
-              amet et deserunt. Pariatur <Link href="#">ipsum proident</Link>{" "}
-              minim proident nostrud pariatur proident sint adipisicing.
-              Excepteur elit non Lorem eu irure enim excepteur. Irure eiusmod
-              proident reprehenderit cupidatat id aute do eu enim pariatur. Quis
-              tempor elit cillum anim dolore.
-            </Paragraph>
-            <Paragraph>
-              Ipsum consectetur laboris labore voluptate. Sint tempor enim
-              laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis ex
-              enim nostrud elit aliquip veniam do veniam. Et esse fugiat officia
-              veniam et. Eu incididunt minim aliquip adipisicing consequat velit
-              nulla aute sint consequat officia nulla. Voluptate deserunt mollit
-              deserunt excepteur ad elit laboris cillum. Dolore reprehenderit ex
-              laboris anim tempor fugiat duis sint officia irure sit quis.
-            </Paragraph>
+            <List>
+              <ListItem />
+              <ListItem />
+              <ListItem />
+              <ListItem />
+              <ListItem />
+              <ListItem />
+            </List>
           </Pod>
         </Col>
-        <Row>
-          <Col xs={12} sm={6}>
-            <Pod>
-              <Paragraph>
-                Ipsum consectetur laboris labore voluptate. Sint tempor enim
-                laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis ex
-                enim nostrud elit aliquip veniam do veniam. Et esse fugiat
-                officia veniam et. Eu incididunt minim aliquip adipisicing
-                consequat velit nulla aute sint consequat officia nulla.
-                Voluptate deserunt mollit deserunt excepteur ad elit laboris
-                cillum. Dolore reprehenderit ex laboris anim tempor fugiat duis
-                sint officia irure sit quis.
-              </Paragraph>
-            </Pod>
-          </Col>
-          <Col xs={12} sm={6}>
-            <Pod>
-              <Paragraph>
-                Ipsum consectetur laboris labore voluptate. Sint tempor enim
-                laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis ex
-                enim nostrud elit aliquip veniam do veniam. Et esse fugiat
-                officia veniam et. Eu incididunt minim aliquip adipisicing
-                consequat velit nulla aute sint consequat officia nulla.
-                Voluptate deserunt mollit deserunt excepteur ad elit laboris
-                cillum. Dolore reprehenderit ex laboris anim tempor fugiat duis
-                sint officia irure sit quis.
-              </Paragraph>
-            </Pod>
-          </Col>
-        </Row>
+
+        <Col xs>
+          <Button>See all</Button>
+        </Col>
       </Container>
     </Section>
   );
 }
+
+const ListItem = () => (
+  <Item>
+    <Identifier>
+      <Logo src={"images/racelogo.png"} alt="xyz" />
+      <Name>Race XYZ</Name>
+    </Identifier>
+    <Details>
+      <Date>00/00/00</Date>
+      <More>
+        <Link>More</Link>
+      </More>
+    </Details>
+  </Item>
+);
+
+const List = styled.ul``;
+
+const Item = styled.li`
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => brightness(theme.background, -2.5)};
+  &:nth-child(odd) {
+    background: ${({ theme }) => theme.background};
+  }
+`;
+
+const Identifier = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 1rem auto 1rem 1rem;
+`;
+
+const Details = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 3rem 1rem 3rem;
+  @media only screen and (max-width: ${breakpoints.sm}rem) {
+    flex-direction: column;
+    margin: 1rem 1rem 1rem 3rem;
+  }
+`;
+
+const Logo = styled.img`
+  max-width: 4rem;
+  margin: 0 1rem 0 0;
+`;
+
+const Name = styled(Paragraph)`
+  margin: 0;
+`;
+
+const Date = styled(Paragraph)`
+  margin: 0;
+`;
+
+const More = styled(Paragraph)`
+  margin: 0 0 0 3rem;
+`;

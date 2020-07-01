@@ -134,6 +134,8 @@ export const Link = styled(Root).attrs({
   margin: 0;
   font-weight: 600;
   color: ${palette.primary};
+  cursor: pointer;
+  text-decoration: underline;
   &:hover {
     text-decoration: none;
   }
