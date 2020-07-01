@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <HeroElement>
       <Container>
-        <Col xs={6}>
+        <Col xs={10} sm={8} md={6}>
           <Paragraph mb0="xs">Welcome to the</Paragraph>
           <Heading.H1>Allied Racing League</Heading.H1>
           <Paragraph>

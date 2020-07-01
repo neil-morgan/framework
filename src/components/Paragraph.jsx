@@ -13,6 +13,9 @@ const Root = styled.p`
   transition: all 500ms;
   margin: 0 0 1em 0;
   color: ${({ theme }) => theme.text};
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const Paragraph = styled(Root)`
