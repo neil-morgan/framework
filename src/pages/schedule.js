@@ -1,4 +1,5 @@
 import Page from "../components/Page";
+import Divider from "../components/Divider";
 import NextRace from "../modules/NextRace";
 import UpcomingRaces from "../modules/UpcomingRaces";
 
@@ -6,6 +7,7 @@ export default function Schedule() {
   return (
     <Page>
       <NextRace />
+      <Divider />
       <UpcomingRaces />
     </Page>
   );

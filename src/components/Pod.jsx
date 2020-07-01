@@ -3,6 +3,7 @@ import Config from "../config";
 const { breakpoints } = Config();
 
 const Pod = styled.div`
+  flex: 1 1 auto;
   padding: 3rem;
   margin: 1rem 0;
   border-radius: 1rem;

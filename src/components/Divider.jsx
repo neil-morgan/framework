@@ -3,8 +3,9 @@ import styled from "styled-components";
 const Divider = styled.hr`
   border: none;
   height: 0.2rem;
-  margin: 1.5rem 0;
-  background: ${({ theme }) => theme.background};
+  width: 50%;
+  margin: 1.5rem auto;
+  background: ${({ theme }) => theme.foreground};
 `;
 
 export default Divider;
