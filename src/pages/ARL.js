@@ -1,12 +1,5 @@
 import Page from "../components/Page";
-import RecentRaces from "../modules/RecentRaces";
-import PastRaces from "../modules/PastRaces";
 
 export default function ARL() {
-  return (
-    <Page>
-      <RecentRaces />
-      <PastRaces />
-    </Page>
-  );
+  return <Page></Page>;
 }

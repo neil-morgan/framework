@@ -73,6 +73,7 @@ export default function Page({ children }) {
 }
 
 const Main = styled.main`
+  display: flex;
   position: absolute;
   z-index: 10;
   width: calc(100% - 30rem);
@@ -97,6 +98,7 @@ const Main = styled.main`
 const Content = styled(motion.div)`
   position: relative;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   z-index: 10;
 `;

@@ -11,7 +11,7 @@ const Section = styled.section`
   &::before {
     content: "";
     display: block;
-    height: 3.5rem;
+    height: 7rem;
 
     ${(props) =>
       props.clearBoth &&

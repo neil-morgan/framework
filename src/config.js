@@ -43,7 +43,7 @@ export const BASE_CONF = {
 const COLOR_PALETTE = {
   primary: "#806CE9",
   secondary: "#4C94EB",
-  tertiary: "xyz",
+  tertiary: "#7F9C38",
   text: "#FFFFFF",
   foreground: "#2F3238",
   background: "#212327",

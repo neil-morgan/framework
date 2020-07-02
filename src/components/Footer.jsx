@@ -6,7 +6,7 @@ const { brightness } = utilities;
 
 export default function Footer() {
   return (
-    <FooterElement>
+    <FooterElement as="footer">
       <Container>
         <Col xs>
           <Heading.H2>Footer</Heading.H2>

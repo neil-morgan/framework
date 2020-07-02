@@ -11,7 +11,7 @@ import {
   Link,
 } from "..";
 
-export default function Test2() {
+export default function PastRaces() {
   return (
     <Section>
       <Container>

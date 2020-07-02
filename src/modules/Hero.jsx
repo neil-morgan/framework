@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Section, Container, Col, Heading, Paragraph, Button } from "../";
+import { Section, Container, Row, Col, Heading, Paragraph, Button } from "../";
 import utilities from "../utilities";
 
-const { brightness, opacity } = utilities;
+const { brightness } = utilities;
 
-export default function Footer() {
+export default function Hero() {
   return (
     <HeroElement>
       <Container>
@@ -17,10 +17,14 @@ export default function Footer() {
             pariatur consequat qui commodo anim nisi velit. Amet ut ut duis
             excepteur id veniam molli.
           </Paragraph>
-
-          <Button alt left="xs">
-            See schedule
-          </Button>
+          <Row>
+            <Button left="xs" mr1="xs">
+              Sign in
+            </Button>
+            <Button left="xs" alt>
+              Sign up
+            </Button>
+          </Row>
         </Col>
       </Container>
     </HeroElement>

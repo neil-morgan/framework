@@ -46,7 +46,7 @@ export default function NextRace() {
               </Col>
             </Row>
             <Col xs>
-              <Button alt left="sm" center="xs">
+              <Button left="sm" center="xs">
                 More info
               </Button>
             </Col>

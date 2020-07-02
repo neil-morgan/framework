@@ -7,22 +7,20 @@ import {
   Heading,
   Paragraph,
   Small,
-  Link,
   Bold,
+  Link,
 } from "..";
-import styled from "styled-components";
-import config from "../config";
 
-export default function RecentRaces() {
+export default function Results() {
   return (
-    <Section invert>
+    <Section>
       <Container>
         <Col xs>
-          <Heading.H1>Recent races</Heading.H1>
+          <Heading.H1>Results</Heading.H1>
         </Col>
         <Col xs>
           <Pod>
-            <Heading.H2>Australian GP</Heading.H2>
+            <Heading.H2>Results data</Heading.H2>
             <Paragraph>
               Sunt consectetur irure <Bold>cillum reprehenderit</Bold> duis.{" "}
               <Small>This is small text</Small> pariatur ut esse consequat qui.
@@ -34,11 +32,13 @@ export default function RecentRaces() {
               tempor elit cillum anim dolore.
             </Paragraph>
             <Paragraph>
-              Eiusmod aute mollit aliquip id fugiat nisi excepteur qui. In
-              exercitation et ea nisi. Adipisicing laborum ut quis anim ipsum et
-              commodo occaecat labore in sit. Magna non qui nisi laboris laborum
-              ut sunt mollit ad tempor ad. Ullamco mollit aliqua dolore in. Enim
-              nisi incididunt nisi nostrud.
+              Ipsum consectetur laboris labore voluptate. Sint tempor enim
+              laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis ex
+              enim nostrud elit aliquip veniam do veniam. Et esse fugiat officia
+              veniam et. Eu incididunt minim aliquip adipisicing consequat velit
+              nulla aute sint consequat officia nulla. Voluptate deserunt mollit
+              deserunt excepteur ad elit laboris cillum. Dolore reprehenderit ex
+              laboris anim tempor fugiat duis sint officia irure sit quis.
             </Paragraph>
           </Pod>
         </Col>

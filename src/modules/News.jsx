@@ -10,13 +10,12 @@ import {
   Link,
   Bold,
 } from "..";
-import styled from "styled-components";
 import config from "../config";
 import Divider from "../components/Divider";
 
 const { palette } = config();
 
-export default function Test1() {
+export default function News() {
   return (
     <>
       <Section>

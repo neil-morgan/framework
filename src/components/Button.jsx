@@ -139,10 +139,10 @@ const ButtonWrapper = styled.div`
     border-radius: 0.66rem;
     background: linear-gradient(
       90deg,
-      ${({ theme }) => brightness(theme.primary, -15)} 0%,
-      ${({ theme }) => brightness(theme.primary, -30)} 7.5%,
-      ${({ theme }) => brightness(theme.primary, -30)} 92.5%,
-      ${({ theme }) => brightness(theme.primary, -15)} 100%
+      ${({ theme }) => brightness(theme.tertiary, -15)} 0%,
+      ${({ theme }) => brightness(theme.tertiary, -30)} 7.5%,
+      ${({ theme }) => brightness(theme.tertiary, -30)} 92.5%,
+      ${({ theme }) => brightness(theme.tertiary, -15)} 100%
     );
     ${({ props }) =>
       props.alt &&
@@ -160,7 +160,7 @@ const ButtonWrapper = styled.div`
   ${({ props }) =>
     props.top &&
     Config(props).media[props.top]`
-        margin-top: auto;
+        margin-right: auto;
   `}
 
   ${({ props }) =>
@@ -172,13 +172,69 @@ const ButtonWrapper = styled.div`
   ${({ props }) =>
     props.bottom &&
     Config(props).media[props.bottom]`
-        margin-top: auto;
+        margin-right: auto;
   `}
 
   ${({ props }) =>
     props.left &&
     Config(props).media[props.left]`
         align-self: flex-start;
+  `}
+  ${({ props }) =>
+    props.mx0 &&
+    Config(props).media[props.mx0]`
+    margin-right: 0;
+    margin-left: 0;
+  `}
+
+  ${({ props }) =>
+    props.mx1 &&
+    Config(props).media[props.mx1]`
+    margin-right: 1em;
+    margin-left: 1em;
+  `}
+
+  ${({ props }) =>
+    props.mx2 &&
+    Config(props).media[props.mx2]`
+    margin-right: 2em;
+    margin-left: 2em;
+  `}
+
+  ${({ props }) =>
+    props.mr0 &&
+    Config(props).media[props.mr0]`
+    margin-right: 0;
+  `}
+
+  ${({ props }) =>
+    props.mr1 &&
+    Config(props).media[props.mr1]`
+    margin-right: 1em;
+  `}
+
+  ${({ props }) =>
+    props.mr2 &&
+    Config(props).media[props.mr2]`
+    margin-right: 2em;
+  `}
+
+  ${({ props }) =>
+    props.ml0 &&
+    Config(props).media[props.ml0]`
+    margin-left: 0;
+  `}
+
+  ${({ props }) =>
+    props.ml1 &&
+    Config(props).media[props.ml1]`
+    margin-left: 1em;
+  `}
+
+  ${({ props }) =>
+    props.ml2 &&
+    Config(props).media[props.ml2]`
+    margin-left: 2em;
   `}
 `;
 
@@ -189,7 +245,7 @@ const ButtonBase = styled.div`
   cursor: pointer;
   display: inline-flex;
   text-decoration: none;
-  padding: 0.5em 1em;
+  padding: 2em 2em;
   border-radius: 0.66rem;
   border: none;
   position: relative;
@@ -197,8 +253,8 @@ const ButtonBase = styled.div`
   color: #fff;
   background: linear-gradient(
     33deg,
-    ${({ theme }) => brightness(theme.primary, 0)} 0%,
-    ${({ theme }) => brightness(theme.primary, -20)} 100%
+    ${({ theme }) => brightness(theme.tertiary, 0)} 0%,
+    ${({ theme }) => brightness(theme.tertiary, -20)} 100%
   );
   ${({ props }) =>
     props.alt &&

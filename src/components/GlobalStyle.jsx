@@ -56,6 +56,10 @@ body {
     background: ${({ theme }) => theme.background};
 }
 
+html, body, #__next, main, main > div  {
+    min-height:100%;
+}
+
 button,
 textarea,
 input,

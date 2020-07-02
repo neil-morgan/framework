@@ -1,12 +1,10 @@
 import Page from "../components/Page";
-import RecentRaces from "../modules/RecentRaces";
-import PastRaces from "../modules/PastRaces";
+import DriverStats from "../modules/DriverStats";
 
 export default function Stats() {
   return (
     <Page>
-      <RecentRaces />
-      <PastRaces />
+      <DriverStats />
     </Page>
   );
 }
