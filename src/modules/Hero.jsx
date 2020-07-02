@@ -18,11 +18,11 @@ export default function Hero() {
             excepteur id veniam molli.
           </Paragraph>
           <Row>
-            <Button left="xs" mr1="xs">
+            <Button link="/auth" left="xs" mr1="xs">
               Sign in
             </Button>
-            <Button left="xs" alt>
-              Sign up
+            <Button link="/auth" left="xs" mr1="xs" alt>
+              Sign Up
             </Button>
           </Row>
         </Col>

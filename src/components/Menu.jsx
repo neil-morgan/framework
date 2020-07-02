@@ -97,7 +97,6 @@ function Button(props) {
       setTimeout(() => Router.push(href), 500),
         setTimeout(() => drawerClose(), 100);
     } else {
-      console.log("true");
       Router.push(href);
       drawerClose();
     }

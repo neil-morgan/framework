@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import Router from "next/router";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 import { fluidRange } from "polished";
@@ -43,7 +44,7 @@ export default function Button(props) {
     "click" === e.type &&
       setTimeout(() => {
         window.location.pathname === props.link && drawerClose();
-        // props.link && navigate(props.link);
+        props.link && Router.push(props.link);
         props.function && props.function();
       }, 140);
   };
