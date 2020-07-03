@@ -4,7 +4,7 @@ import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fluidRange } from "polished";
-import Vector from "./Vector";
+import Icon from "./Icon";
 import Ripple from "./Ripple";
 import Divider from "./Divider";
 import Social from "./Social";
@@ -30,7 +30,7 @@ export default function Menu() {
       <Button to={"/"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Home />
+            <Icon.Home />
           </ButtonIcon>
           Home
         </ButtonTitle>
@@ -38,7 +38,7 @@ export default function Menu() {
       <Button to={"/leagues"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Trophy />
+            <Icon.Trophy />
           </ButtonIcon>
           Leagues
         </ButtonTitle>
@@ -46,7 +46,7 @@ export default function Menu() {
       <Button to={"/drivers"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Driver />
+            <Icon.Driver />
           </ButtonIcon>
           Drivers
         </ButtonTitle>
@@ -54,7 +54,7 @@ export default function Menu() {
       <Button to={"/ARL"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Star />
+            <Icon.Star />
           </ButtonIcon>
           ARL
         </ButtonTitle>
@@ -63,7 +63,7 @@ export default function Menu() {
       <Button to={"/schedule"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Calendar />
+            <Icon.Calendar />
           </ButtonIcon>
           Schedule
         </ButtonTitle>
@@ -71,7 +71,7 @@ export default function Menu() {
       <Button to={"/results"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Rocket />
+            <Icon.Rocket />
           </ButtonIcon>
           Results
         </ButtonTitle>
@@ -79,7 +79,7 @@ export default function Menu() {
       <Button to={"/stats"}>
         <ButtonTitle>
           <ButtonIcon>
-            <Vector.Chart />
+            <Icon.Chart />
           </ButtonIcon>
           Stats
         </ButtonTitle>

@@ -4,7 +4,7 @@ import Router from "next/router";
 import usePageLoading from "../hooks/use-page-loading";
 import { GlobalContext } from "../contexts/global-context";
 import { Row, Col } from "..";
-import Vector from "../components/Vector";
+import Logo from "../components/Logo";
 import Burger from "./Burger";
 import Spinner from "./Spinner";
 
@@ -22,7 +22,7 @@ export default function Navbar() {
       <Row>
         <Col xs={6}>
           <HomeLink onClick={() => handleClick("/")}>
-            <Vector.Logo />
+            <Logo />
           </HomeLink>
         </Col>
         <Col xs={6}>

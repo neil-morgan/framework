@@ -42,7 +42,7 @@ export default function News() {
           </Col>
         </Container>
       </Section>
-      <Divider />
+      <Divider width="50" />
       <Section>
         <Container>
           <Row>
