@@ -47,7 +47,7 @@ export default function News() {
         <Container>
           <Row>
             <Col xs sm={12} md={4}>
-              <Pod>
+              <Pod radiusTop="xs">
                 <Heading.H2>News 1</Heading.H2>
                 <Paragraph>
                   Ipsum consectetur laboris labore voluptate. Sint tempor enim

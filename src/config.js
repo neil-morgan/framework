@@ -83,8 +83,22 @@ const resolveConfig = () => {
         .filter(Boolean)
         .join(" and ")
     );
+
     return media;
   }, {});
+
+  conf.preset = (object) => {
+    for (let [i, v] of Object.entries(object)) {
+      for (let [ii, vv] of Object.entries(presets)) {
+        if (i === ii) {
+          return Config().media[v]`
+            ${vv}
+        `;
+        }
+      }
+    }
+  };
+
   return conf;
 };
 
@@ -93,3 +107,16 @@ export default function Config(props) {
   configCache[0] = conf;
   return conf;
 }
+
+const radius = "1rem";
+
+const presets = {
+  radiusTopLeft: `border-radius: ${radius} 0 0 0;`,
+  radiusTop: `border-radius: ${radius} ${radius} 0 0;`,
+  radiusTopRight: `border-radius: 0 ${radius} 0 0;`,
+  radiusRight: `border-radius: 0 ${radius} ${radius} 0;`,
+  radiusBottomRight: `border-radius: 0 0 ${radius} 0;`,
+  radiusBottom: `border-radius: 0 0 ${radius} ${radius};`,
+  radiusBottomLeft: `border-radius: 0 0 0 ${radius};`,
+  radiusLeft: `border-radius: ${radius} 0 0 ${radius};`,
+};
