@@ -1,15 +1,4 @@
-import {
-  Section,
-  Container,
-  Row,
-  Col,
-  Pod,
-  Heading,
-  Paragraph,
-  Small,
-  Bold,
-  Link,
-} from "..";
+import { Section, Container, Col, Pod, Heading, Text } from "..";
 
 export default function Results() {
   return (
@@ -21,7 +10,7 @@ export default function Results() {
         <Col xs>
           <Pod>
             <Heading.H2>Results data</Heading.H2>
-            <Paragraph>Bar charts and comparisons and stuff</Paragraph>
+            <Text.P>Bar charts and comparisons and stuff</Text.P>
           </Pod>
         </Col>
       </Container>

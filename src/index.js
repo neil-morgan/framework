@@ -4,7 +4,8 @@ import Row from "./components/Row";
 import Col from "./components/Col";
 import Pod from "./components/Pod";
 import Heading from "./components/Heading";
-import Paragraph, { Small, Link, Bold } from "./components/Paragraph";
+import Text from "./components/Text";
+import List from "./components/List";
 import Button from "./components/Button";
 import Ripple from "./components/Ripple";
 import config from "./config";
@@ -16,10 +17,8 @@ export {
   Col,
   Pod,
   Heading,
-  Paragraph,
-  Small,
-  Link,
-  Bold,
+  Text,
+  List,
   Button,
   Ripple,
   config,

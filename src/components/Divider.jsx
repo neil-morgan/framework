@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Config from "../config";
 
 const Divider = styled.hr`
   border: none;
@@ -7,11 +8,7 @@ const Divider = styled.hr`
   margin: 1.5rem auto;
   background: ${({ theme }) => theme.foreground};
 
-  ${(props) =>
-    props.width &&
-    `
-      width: ${props.width}%;
-    `}
+  ${(props) => props && Config().preset(props)}
 `;
 
 export default Divider;

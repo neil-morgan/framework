@@ -137,7 +137,7 @@ function rgbToHex(r, g, b) {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
-class DomUtils {
+class scrollLock {
   // left: 37, up: 38, right: 39, down: 40,
   // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
   static keys = {
@@ -159,26 +159,26 @@ class DomUtils {
   }
 
   static preventDefaultForScrollKeys(e) {
-    if (DomUtils.keys[e.keyCode]) {
-      DomUtils.preventDefault(e);
+    if (scrollLock.keys[e.keyCode]) {
+      scrollLock.preventDefault(e);
       return false;
     }
   }
 
   static disableScroll() {
     if (typeof document !== "undefined") {
-      document.addEventListener("wheel", DomUtils.preventDefault, {
+      document.addEventListener("wheel", scrollLock.preventDefault, {
         passive: false,
       }); // Disable scrolling in Chrome
       document.addEventListener(
         "keydown",
-        DomUtils.preventDefaultForScrollKeys,
+        scrollLock.preventDefaultForScrollKeys,
         {
           passive: false,
         }
       );
 
-      document.addEventListener("touchmove", DomUtils.preventDefault, {
+      document.addEventListener("touchmove", scrollLock.preventDefault, {
         passive: false,
       });
     }
@@ -186,17 +186,17 @@ class DomUtils {
 
   static enableScroll() {
     if (typeof document !== "undefined") {
-      document.removeEventListener("wheel", DomUtils.preventDefault, {
+      document.removeEventListener("wheel", scrollLock.preventDefault, {
         passive: false,
       }); // Enable scrolling in Chrome
       document.removeEventListener(
         "keydown",
-        DomUtils.preventDefaultForScrollKeys,
+        scrollLock.preventDefaultForScrollKeys,
         {
           passive: false,
         }
       ); // Enable scrolling in Chrome
-      document.removeEventListener("touchmove", DomUtils.preventDefault, {
+      document.removeEventListener("touchmove", scrollLock.preventDefault, {
         passive: false,
       });
     }
@@ -207,7 +207,7 @@ const utilities = {
   brightness,
   opacity,
   hue,
-  DomUtils,
+  scrollLock,
 };
 
 export default utilities;

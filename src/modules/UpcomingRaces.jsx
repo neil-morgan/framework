@@ -2,19 +2,7 @@ import styled from "styled-components";
 import utilities from "../utilities";
 import Config from "../config";
 
-import {
-  Section,
-  Container,
-  Row,
-  Col,
-  Pod,
-  Heading,
-  Paragraph,
-  Small,
-  Bold,
-  Link,
-  Button,
-} from "..";
+import { Section, Container, Col, Pod, Heading, Text, Button } from "..";
 
 const { breakpoints } = Config();
 const { brightness } = utilities;
@@ -57,7 +45,7 @@ const ListItem = () => (
     <Details>
       <Date>00/00/00</Date>
       <More>
-        <Link>More</Link>
+        <Text.A>More</Text.A>
       </More>
     </Details>
   </Item>
@@ -95,14 +83,14 @@ const Logo = styled.img`
   margin: 0 1rem 0 0;
 `;
 
-const Name = styled(Paragraph)`
+const Name = styled(Text.P)`
   margin: 0;
 `;
 
-const Date = styled(Paragraph)`
+const Date = styled(Text.P)`
   margin: 0;
 `;
 
-const More = styled(Paragraph)`
+const More = styled(Text.P)`
   margin: 0 0 0 3rem;
 `;

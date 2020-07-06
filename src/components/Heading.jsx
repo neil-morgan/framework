@@ -1,92 +1,14 @@
-import styled, { css } from "styled-components";
-import PropTypes from "prop-types";
+import styled from "styled-components";
 import { fluidRange } from "polished";
 import Config from "../config";
 
-const { dimensions } = Config();
-
-const ModificatorType = PropTypes.oneOf(dimensions);
-
 const Root = styled.h1`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 400;
   transition: all 500ms;
   color: ${({ theme }) => theme.text};
 
-  ${(props) =>
-    props.left &&
-    Config(props).media[props.left]`
-    text-align: left;
-  `}
-
-  ${(props) =>
-    props.center &&
-    Config(props).media[props.center]`
-    text-align: center;
-  `}
-
-  ${(props) =>
-    props.right &&
-    Config(props).media[props.right]`
-    text-align: right;
-  `}
-
-  ${(props) =>
-    props.my0 &&
-    Config(props).media[props.my0]`
-    margin-top: 0;
-    margin-bottom: 0;
-  `}
-
-  ${(props) =>
-    props.my1 &&
-    Config(props).media[props.my1]`
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
-  `}
-
-  ${(props) =>
-    props.my2 &&
-    Config(props).media[props.my2]`
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  `}
-
-  ${(props) =>
-    props.mt0 &&
-    Config(props).media[props.mt0]`
-    margin-top: 0;
-  `}
-
-  ${(props) =>
-    props.mt1 &&
-    Config(props).media[props.mt1]`
-    margin-top: 0.25em;
-  `}
-
-  ${(props) =>
-    props.mt2 &&
-    Config(props).media[props.mt2]`
-    margin-top: 0.5em;
-  `}
-
-  ${(props) =>
-    props.mb0 &&
-    Config(props).media[props.mb0]`
-    margin-bottom: 0;
-  `}
-
-  ${(props) =>
-    props.mb1 &&
-    Config(props).media[props.mb1]`
-    margin-bottom: 0.25em;
-  `}
-
-  ${(props) =>
-    props.mb2 &&
-    Config(props).media[props.mb2]`
-    margin-bottom: 0.5em;
-  `}
+  ${(props) => props && Config().preset(props)}
 `;
 
 const H1 = styled(Root)`
@@ -120,14 +42,6 @@ const H2 = styled(Root).attrs({
 const Heading = {
   H1,
   H2,
-};
-
-Heading.displayName = "Heading";
-
-Heading.propTypes = {
-  left: ModificatorType,
-  center: ModificatorType,
-  right: ModificatorType,
 };
 
 export default Heading;

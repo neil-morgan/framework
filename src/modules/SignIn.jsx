@@ -1,16 +1,4 @@
-import {
-  Section,
-  Container,
-  Row,
-  Col,
-  Pod,
-  Heading,
-  Paragraph,
-  Small,
-  Link,
-  Bold,
-} from "..";
-import config from "../config";
+import { Section, Container, Col, Heading } from "..";
 
 export default function SignIn() {
   return (

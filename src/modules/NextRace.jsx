@@ -1,18 +1,6 @@
 import styled from "styled-components";
 import utilities from "../utilities";
-import {
-  Section,
-  Container,
-  Row,
-  Col,
-  Pod,
-  Heading,
-  Paragraph,
-  Small,
-  Link,
-  Bold,
-  Button,
-} from "..";
+import { Section, Container, Row, Col, Heading, Text, Button } from "..";
 
 import Config from "../config";
 
@@ -39,7 +27,7 @@ export default function NextRace() {
               <Col xs={9} sm={8} md={6}>
                 <Heading.H2 mb0="xs">{tempData.title}</Heading.H2>
                 <StartDate>Starts in {tempData.time}</StartDate>
-                <Paragraph>{tempData.description}</Paragraph>
+                <Text.P>{tempData.description}</Text.P>
               </Col>
               <Col xs={3} sm={4}>
                 <Track />
@@ -118,7 +106,7 @@ const Graphic = styled.svg`
   }
 `;
 
-const StartDate = styled(Paragraph)`
+const StartDate = styled(Text.P)`
   color: ${({ theme }) => brightness(theme.secondary, 15)};
   font-weight: bold;
 `;

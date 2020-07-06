@@ -2,9 +2,11 @@ import { useEffect, useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
-import Footer from "./Footer";
+import { Section, Container, Col, Heading, Text } from "../";
+import utilities from "../utilities";
 import Config from "../config";
 
+const { brightness } = utilities;
 const { breakpoints } = Config();
 
 export default function Page({ children }) {
@@ -72,6 +74,29 @@ export default function Page({ children }) {
   );
 }
 
+function Footer() {
+  return (
+    <FooterElement as="footer">
+      <Container>
+        <Col xs>
+          <Heading.H2>Footer</Heading.H2>
+          <Text.P>
+            Laboris consequat pariatur consequat qui commodo anim nisi velit.
+            Amet ut ut duis excepteur id veniam mollit officia do. Do ut in
+            tempor ad deserunt sint in exercitation est. Quis ex ad mollit
+            dolore laboris adipisicing ea culpa. Duis non eu Lorem officia.
+          </Text.P>
+        </Col>
+      </Container>
+    </FooterElement>
+  );
+}
+
+const FooterElement = styled(Section)`
+  background: ${({ theme }) => brightness(theme.background, -3)};
+  margin: auto 0 0;
+`;
+
 const Main = styled.main`
   display: flex;
   position: absolute;
@@ -102,7 +127,3 @@ const Content = styled(motion.div)`
   flex-direction: column;
   z-index: 10;
 `;
-
-// @media only screen and (max-width: ${breakpoints.sm}rem) {
-//   padding: 1.5rem;
-// }

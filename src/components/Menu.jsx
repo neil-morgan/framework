@@ -7,7 +7,6 @@ import { fluidRange } from "polished";
 import Icon from "./Icon";
 import Ripple from "./Ripple";
 import Divider from "./Divider";
-import Social from "./Social";
 import utilities from "../utilities";
 import Config from "../config";
 
@@ -27,70 +26,41 @@ export default function Menu() {
 
   return (
     <Nav>
-      <Button to={"/"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Home />
-          </ButtonIcon>
-          Home
-        </ButtonTitle>
-      </Button>
-      <Button to={"/leagues"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Trophy />
-          </ButtonIcon>
-          Leagues
-        </ButtonTitle>
-      </Button>
-      <Button to={"/drivers"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Driver />
-          </ButtonIcon>
-          Drivers
-        </ButtonTitle>
-      </Button>
-      <Button to={"/ARL"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Star />
-          </ButtonIcon>
-          ARL
-        </ButtonTitle>
-      </Button>
+      <NavItem to={"/"}>
+        <Icon.Home />
+        Home
+      </NavItem>
+      <NavItem to={"/leagues"}>
+        <Icon.Trophy />
+        Leagues
+      </NavItem>
+      <NavItem to={"/drivers"}>
+        <Icon.Driver />
+        Drivers
+      </NavItem>
+      <NavItem to={"/ARL"}>
+        <Icon.Star />
+        ARL
+      </NavItem>
       <Divider />
-      <Button to={"/schedule"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Calendar />
-          </ButtonIcon>
-          Schedule
-        </ButtonTitle>
-      </Button>
-      <Button to={"/results"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Rocket />
-          </ButtonIcon>
-          Results
-        </ButtonTitle>
-      </Button>
-      <Button to={"/stats"}>
-        <ButtonTitle>
-          <ButtonIcon>
-            <Icon.Chart />
-          </ButtonIcon>
-          Stats
-        </ButtonTitle>
-      </Button>
+      <NavItem to={"/schedule"}>
+        <Icon.Calendar />
+        Schedule
+      </NavItem>
+      <NavItem to={"/results"}>
+        <Icon.Rocket />
+        Results
+      </NavItem>
+      <NavItem to={"/stats"}>
+        <Icon.Chart />
+        Stats
+      </NavItem>
       <Divider />
-      <Social />
     </Nav>
   );
 }
 
-function Button(props) {
+function NavItem(props) {
   const { drawerClose } = useContext(GlobalContext);
   const handleClick = (href) => {
     if (window.innerWidth < breakpoints.lg * 16) {
@@ -102,10 +72,10 @@ function Button(props) {
     }
   };
   return (
-    <ButtonElement onClick={() => handleClick(props.to)} props={props}>
+    <Link onClick={() => handleClick(props.to)} props={props}>
       {props.children}
       <Ripple />
-    </ButtonElement>
+    </Link>
   );
 }
 
@@ -118,11 +88,13 @@ const Nav = styled.nav`
   padding: 3rem 0;
 `;
 
-const ButtonElement = styled.div`
+const Link = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
+  max-width: 21rem;
   max-height: 5.5rem;
   cursor: pointer;
   display: inline-flex;
@@ -134,7 +106,6 @@ const ButtonElement = styled.div`
   color: #fff;
   padding: 1rem 3rem 0.75rem;
   letter-spacing: 0.1rem;
-  line-height: 1;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -144,6 +115,8 @@ const ButtonElement = styled.div`
   outline: none;
   user-drag: none;
   transition: all 250ms;
+  font-weight: normal;
+  text-align: center;
   font-size: ${fluidRange(
     {
       prop: "font-size",
@@ -153,9 +126,6 @@ const ButtonElement = styled.div`
     "320px",
     "1200px"
   )};
-  font-weight: normal;
-  text-align: center;
-  transition: all 250ms;
   background: linear-gradient(
     to right,
     ${({ theme }) => brightness(theme.background, -6)} 10%,
@@ -166,21 +136,12 @@ const ButtonElement = styled.div`
   &:hover {
     background-color: ${({ theme }) => brightness(theme.background, 5)};
   }
+  svg {
+    max-width: 1.1em;
+    margin: 0 0.75em 0 0;
+  }
 `;
 
-const ButtonTitle = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  max-width: 16em;
-`;
-
-const ButtonIcon = styled.span`
-  width: 1.1em;
-  margin: 0 0.75em 0 0;
-`;
-
-Button.propTypes = {
+Link.propTypes = {
   to: PropTypes.string,
 };

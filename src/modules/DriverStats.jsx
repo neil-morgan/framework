@@ -1,15 +1,4 @@
-import {
-  Section,
-  Container,
-  Row,
-  Col,
-  Pod,
-  Heading,
-  Paragraph,
-  Small,
-  Bold,
-  Link,
-} from "..";
+import { Section, Container, Col, Pod, Heading, Text } from "..";
 
 export default function DriverStats() {
   return (
@@ -21,9 +10,7 @@ export default function DriverStats() {
         <Col xs>
           <Pod>
             <Heading.H2>Stats data</Heading.H2>
-            <Paragraph>
-              <Paragraph>Bar charts and comparisons and stuff</Paragraph>
-            </Paragraph>
+            <Text.P>Bar charts and comparisons and stuff</Text.P>
           </Pod>
         </Col>
       </Container>
