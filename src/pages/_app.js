@@ -10,11 +10,11 @@ import GlobalContextProvider, {
 import utilities from "../utilities";
 import Config from "../config";
 import Logo from "../components/Logo";
-import Menu from "../components/Menu";
+import Menu from "../modules/Menu";
 import { Row, Col } from "..";
 
 const { brightness, opacity } = utilities;
-const { palette, breakpoints } = Config();
+const { palette } = Config();
 
 export default function App({ Component, pageProps, router }) {
   return (
@@ -98,7 +98,7 @@ const Toggle = styled.a`
   pointer-events: auto;
   cursor: pointer;
   z-index: 1002;
-  display: none;
+  display: flex;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -107,9 +107,6 @@ const Toggle = styled.a`
   -ms-user-select: none;
   user-select: none;
   outline: none;
-  @media only screen and (max-width: ${breakpoints.lg}rem) {
-    display: flex;
-  }
 `;
 
 const Bars = styled.div`
@@ -179,19 +176,16 @@ const Aside = styled.aside`
   padding: 5rem 4rem 12rem;
   transform-origin: right;
   transition: all 500ms;
-  transform: translate(0, 0);
+  transform: translate(25%, 0);
   display: flex;
   width: 30rem;
   background: ${({ theme }) => brightness(theme.background, -6)};
 
-  @media only screen and (max-width: ${breakpoints.lg}rem) {
-    transform: translate(25%, 0);
-    ${({ drawerState }) =>
-      drawerState &&
-      css`
-        transform: translate(0, 0);
-      `}
-  }
+  ${({ drawerState }) =>
+    drawerState &&
+    css`
+      transform: translate(0, 0);
+    `}
 `;
 
 const Nav = styled.nav`

@@ -4,9 +4,9 @@ import { GlobalContext } from "../contexts/global-context";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fluidRange } from "polished";
-import Icon from "./Icon";
-import Ripple from "./Ripple";
-import Divider from "./Divider";
+import Icon from "../components/Icon";
+import Ripple from "../components/Ripple";
+import Divider from "../components/Divider";
 import utilities from "../utilities";
 import Config from "../config";
 

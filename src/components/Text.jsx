@@ -1,37 +1,68 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { fluidRange } from "polished";
 import Config from "../config";
 
 const { palette } = Config();
 
-const Root = styled.p`
+const fluidMin = "320px";
+const fluidMax = "1200px";
+
+const Root = () => css`
   font-family: "Nunito";
   font-weight: 400;
-  margin: 0 0 1em 0;
   color: ${({ theme }) => theme.text};
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   ${(props) => props && Config().preset(props)}
 `;
 
-const P = styled(Root)`
+const Title = styled.h1`
+  ${Root}
+  font-family: "Roboto";
+  margin-bottom: 0.5em;
   ${fluidRange(
     {
       prop: "font-size",
-      fromSize: "16px",
-      toSize: "18px",
+      fromSize: "36px",
+      toSize: "42px",
     },
     "320px",
     "1200px"
   )}
 `;
 
-const A = styled(Root).attrs({
-  as: "a",
-})`
-  margin: 0;
+const Heading = styled.h2`
+  ${Root}
+  font-family: "Roboto";
+  margin-bottom: 1em;
+  ${fluidRange(
+    {
+      prop: "font-size",
+      fromSize: "24px",
+      toSize: "30px",
+    },
+    fluidMin,
+    fluidMax
+  )}
+`;
+
+const Paragraph = styled.p`
+  ${Root}
+  ${fluidRange(
+    {
+      prop: "font-size",
+      fromSize: "16px",
+      toSize: "18px",
+    },
+    fluidMin,
+    fluidMax
+  )}
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const Link = styled.a`
+  ${Root}
   font-weight: 600;
   color: ${palette.primary};
   cursor: pointer;
@@ -41,10 +72,8 @@ const A = styled(Root).attrs({
   }
 `;
 
-const Small = styled(Root).attrs({
-  as: "small",
-})`
-  margin: 0;
+const Small = styled.small`
+  ${Root}
   display: inline-flex;
   ${fluidRange(
     {
@@ -52,26 +81,53 @@ const Small = styled(Root).attrs({
       fromSize: "12px",
       toSize: "14px",
     },
-    "320px",
-    "1200px"
+    fluidMin,
+    fluidMax
   )}
 `;
 
-const Strong = styled(Root).attrs({
-  as: "strong",
-})`
-  margin: 0;
+const Strong = styled.strong`
+  ${Root}
   font-weight: 900;
-  &:hover {
-    text-decoration: none;
+`;
+
+const List = styled.ul`
+  ${Root}
+  ${fluidRange(
+    {
+      prop: "font-size",
+      fromSize: "16px",
+      toSize: "18px",
+    },
+    fluidMin,
+    fluidMax
+  )}
+  margin-left: 2rem;
+  margin-bottom: 1em;
+  & ol,
+  & ul {
+    margin-bottom: 0;
+  }
+`;
+
+const Item = styled.li`
+  ${Root}
+  color: ${({ theme }) => theme.text};
+  margin: 0 0 0.5em 0;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
 const Text = {
-  P,
-  A,
+  Title,
+  Heading,
+  Paragraph,
+  Link,
   Strong,
   Small,
+  List,
+  Item,
 };
 
 export default Text;

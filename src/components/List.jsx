@@ -1,26 +1,25 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { fluidRange } from "polished";
 import Config from "../config";
 
-const Root = styled.ul`
+const Root = () => css`
   font-family: "Nunito";
   font-weight: 400;
-  color: black;
-
+  color: ${({ theme }) => theme.text};
   ${(props) => props && Config().preset(props)}
 `;
 
-const Group = styled(Root)`
-  &,
+const List = () => css`
+  ${Root}
+  margin: 0 0 2rem 2rem;
   & ol,
   & ul {
     margin: 0 0 0 2rem;
   }
 `;
 
-const Item = styled(Root).attrs({
-  as: "li",
-})`
+const LI = styled.li`
+  ${Root}
   ${fluidRange(
     {
       prop: "font-size",
@@ -37,9 +36,9 @@ const Item = styled(Root).attrs({
   }
 `;
 
-const List = {
-  Group,
-  Item,
+const Export = {
+  List,
+  LI,
 };
 
-export default List;
+export default Export;

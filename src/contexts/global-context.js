@@ -8,7 +8,15 @@ const { debug, palette } = Config();
 export const GlobalContext = createContext();
 
 export default function GlobalContextProvider(props) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [drawerState, setDrawerState] = useState(false);
+
+  function login() {
+    setIsLoggedIn(true);
+  }
+  function logout() {
+    setIsLoggedIn(false);
+  }
 
   function drawerClose() {
     setDrawerState(!1);
@@ -27,6 +35,9 @@ export default function GlobalContextProvider(props) {
   return (
     <GlobalContext.Provider
       value={{
+        isLoggedIn,
+        login: login,
+        logout: logout,
         drawerState,
         drawerClose: drawerClose,
         drawerOpen: drawerOpen,

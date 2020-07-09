@@ -68,7 +68,7 @@ export default function Page({ children }) {
         exit="out"
       >
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </Content>
     </Main>
   );
@@ -101,8 +101,7 @@ const Main = styled.main`
   display: flex;
   position: absolute;
   z-index: 10;
-  width: calc(100% - 30rem);
-  padding: 5rem 0 0;
+  width: 100%;
   top: 0;
   right: 0;
   left: 0;
@@ -110,14 +109,12 @@ const Main = styled.main`
   transition: all 500ms;
   transform-origin: right;
   background: ${({ theme }) => theme.background};
-  @media only screen and (max-width: ${breakpoints.lg}rem) {
-    width: 100%;
-    ${({ drawerState }) =>
-      drawerState &&
-      css`
-        transform: translate(-30rem, 0);
-      `}
-  }
+
+  ${({ drawerState }) =>
+    drawerState &&
+    css`
+      transform: translate(-30rem, 0);
+    `}
 `;
 
 const Content = styled(motion.div)`

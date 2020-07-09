@@ -9,22 +9,17 @@ export default function Hero() {
     <HeroElement>
       <Container>
         <Col xs={10} sm={8} md={6}>
-          <Text.P mb0="xs">Welcome to the</Text.P>
+          <Text.Paragraph mb0="xs">Welcome to the</Text.Paragraph>
           <Heading.H1>Allied Racing League</Heading.H1>
-          <Text.P>
-            Laboris consequat pariatur consequat qui commodo anim nisi velit.
-            Amet ut ut duis excepteur id veniam molli. Laboris consequat
-            pariatur consequat qui commodo anim nisi velit. Amet ut ut duis
-            excepteur id veniam molli.
-          </Text.P>
-          <Row>
-            <Button link="/auth" left="xs" mr1="xs">
-              Sign in
-            </Button>
-            <Button link="/auth" left="xs" mr1="xs" alt>
-              Sign Up
-            </Button>
-          </Row>
+          <Text.Paragraph>
+            Elit dolor sit fugiat consequat ea sint occaecat. Adipisicing labore
+            velit excepteur aute sint et eu tempor quis. Eiusmod enim nisi
+            laboris voluptate sit aliquip ut ad reprehenderit do. Consequat
+            irure adipisicing ut nostrud nulla nostrud enim dolore culpa velit.
+            Nostrud enim incididunt aliqua do cillum veniam mollit cupidatat
+            laborum aute labore. Ea incididunt incididunt dolor eiusmod veniam
+            est minim aliquip non Lorem commodo velit.
+          </Text.Paragraph>
         </Col>
       </Container>
     </HeroElement>

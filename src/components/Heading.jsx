@@ -1,18 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { fluidRange } from "polished";
 import Config from "../config";
 
-const Root = styled.h1`
+const Root = () => css`
   font-family: "Roboto";
   font-weight: 400;
-  transition: all 500ms;
   color: ${({ theme }) => theme.text};
-
   ${(props) => props && Config().preset(props)}
 `;
 
-const H1 = styled(Root)`
-  margin: 0 0 0.5em 0;
+const H1 = styled.h1`
+  ${Root}
+  margin-bottom:0.5em;
   ${fluidRange(
     {
       prop: "font-size",
@@ -24,10 +23,9 @@ const H1 = styled(Root)`
   )}
 `;
 
-const H2 = styled(Root).attrs({
-  as: "h2",
-})`
-  margin: 0 0 1em 0;
+const H2 = styled.h2`
+  ${Root}
+  margin-bottom: 1em;
   ${fluidRange(
     {
       prop: "font-size",

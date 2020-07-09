@@ -40,9 +40,9 @@ function resolveConfig() {
 
   conf.preset = (obj) => {
     let arr = [];
-    for (let [key, bp] of Object.entries(obj))
+    for (let [keyword, bp] of Object.entries(obj))
       for (let [preset, css] of Object.entries(PRESETS))
-        key === preset &&
+        keyword === preset &&
           ("string" == typeof bp
             ? arr.push(Config().media[bp]`${css}`)
             : arr.push(`${css}`));
@@ -59,15 +59,17 @@ const BASE_CONF = {
   outerMargin: 0.5,
   mediaQuery: "only screen",
   container: {
-    sm: 75, // rem
-    md: 111, // rem
-    lg: 111, // rem
+    sm: 75, // rem | xs->sm
+    md: 111, // rem | sm->md
+    lg: 111, // rem | md->lg
+    xl: 120, // rem | lg->xl
   },
   breakpoints: {
     xs: 0, // em
     sm: 50, // em
     md: 75, // em
-    lg: 100, // em
+    lg: 80, // em
+    xl: 100, // em
   },
   colors: {
     red: "#f44336",
@@ -101,7 +103,7 @@ const COLOR_PALETTE = {
   background: "#212327",
 };
 
-const DIMENSION_NAMES = ["xs", "sm", "md", "lg"];
+const DIMENSION_NAMES = ["xs", "sm", "md", "lg", "xl"];
 
 const PRESETS = {
   w_auto: `width: auto;`,
@@ -109,6 +111,14 @@ const PRESETS = {
   w_50: `width: 50%;`,
   w_75: `width: 75%;`,
   w_100: `width: 100%;`,
+  mxw_25: `max-width: 25%;`,
+  mxw_50: `max-width: 50%;`,
+  mxw_75: `max-width: 75%;`,
+  mxw_100: `max-width: 100%;`,
+  mnw_25: `min-width: 25%;`,
+  mnw_50: `min-width: 50%;`,
+  mnw_75: `min-width: 75%;`,
+  mnw_100: `min-width: 100%;`,
   h_auto: `height: auto;`,
   h_25: `height: 25%;`,
   h_50: `height: 50%;`,

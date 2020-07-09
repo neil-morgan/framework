@@ -8,8 +8,6 @@ const { dimensions } = Config();
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  padding-right: ${(props) => Config(props).outerMargin + "rem"};
-  padding-left: ${(props) => Config(props).outerMargin + "rem"};
 
   ${(props) =>
     !props.fluid &&
@@ -19,6 +17,8 @@ const Container = styled.div`
           Config(props).container[t] &&
           Config(props).media[t]`
             width: ${(props) => Config(props).container[t]}rem;
+            padding-right: ${(props) => Config(props).outerMargin + "rem"};
+            padding-left: ${(props) => Config(props).outerMargin + "rem"};
       `
       )}
     `}
