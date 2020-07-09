@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Section, Container, Row, Col, Heading, Text, Button } from "../";
+import { Section, Container, Col, Text } from "../";
 import utilities from "../utilities";
 
+const { Title, Paragraph } = Text;
 const { brightness } = utilities;
 
 export default function Hero() {
@@ -9,9 +10,9 @@ export default function Hero() {
     <HeroElement>
       <Container>
         <Col xs={10} sm={8} md={6}>
-          <Text.Paragraph mb0="xs">Welcome to the</Text.Paragraph>
-          <Heading.H1>Allied Racing League</Heading.H1>
-          <Text.Paragraph>
+          <Paragraph mb0="xs">Welcome to the</Paragraph>
+          <Title>Allied Racing League</Title>
+          <Paragraph>
             Elit dolor sit fugiat consequat ea sint occaecat. Adipisicing labore
             velit excepteur aute sint et eu tempor quis. Eiusmod enim nisi
             laboris voluptate sit aliquip ut ad reprehenderit do. Consequat
@@ -19,7 +20,7 @@ export default function Hero() {
             Nostrud enim incididunt aliqua do cillum veniam mollit cupidatat
             laborum aute labore. Ea incididunt incididunt dolor eiusmod veniam
             est minim aliquip non Lorem commodo velit.
-          </Text.Paragraph>
+          </Paragraph>
         </Col>
       </Container>
     </HeroElement>

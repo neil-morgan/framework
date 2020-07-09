@@ -2,12 +2,11 @@ import { useEffect, useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { GlobalContext } from "../contexts/global-context";
-import { Section, Container, Col, Heading, Text } from "../";
+import { Section, Container, Col, Text } from "../";
 import utilities from "../utilities";
-import Config from "../config";
 
+const { Heading, Paragraph } = Text;
 const { brightness } = utilities;
-const { breakpoints } = Config();
 
 export default function Page({ children }) {
   const { drawerState, drawerClose } = useContext(GlobalContext);
@@ -68,7 +67,7 @@ export default function Page({ children }) {
         exit="out"
       >
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </Content>
     </Main>
   );
@@ -79,13 +78,13 @@ function Footer() {
     <FooterElement as="footer">
       <Container>
         <Col xs>
-          <Heading.H2>Footer</Heading.H2>
-          <Text.P>
+          <Heading>Footer</Heading>
+          <Paragraph>
             Laboris consequat pariatur consequat qui commodo anim nisi velit.
             Amet ut ut duis excepteur id veniam mollit officia do. Do ut in
             tempor ad deserunt sint in exercitation est. Quis ex ad mollit
             dolore laboris adipisicing ea culpa. Duis non eu Lorem officia.
-          </Text.P>
+          </Paragraph>
         </Col>
       </Container>
     </FooterElement>

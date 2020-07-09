@@ -79,24 +79,24 @@ export default function Button(props) {
 const Wrapper = styled.div`
   position: relative;
   z-index: 1000;
-  margin:3rem 0;
+  margin: 3rem 0;
   align-self: center;
   &,
   &::after,
-  &::before{
+  &::before {
     transition: all 150ms ease-out;
   }
-  &::after{
+  &::after {
     content: "";
     z-index: -1;
     pointer-events: none;
     position: absolute;
-    bottom: -0.9rem; 
+    bottom: -0.9rem;
     left: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 0.66rem;
   }
   &::before {
@@ -116,7 +116,7 @@ const Wrapper = styled.div`
       ${({ theme }) => brightness(theme.tertiary, -30)} 92.5%,
       ${({ theme }) => brightness(theme.tertiary, -15)} 100%
     );
-    
+
     ${({ props }) =>
       props.alt &&
       css`
@@ -152,7 +152,7 @@ const Wrapper = styled.div`
         transform: translateY(-0.2rem);
       }
     `}
-  ${(props) => props && Config().preset(props)}
+    ${({ props }) => props && Config().preset(props)}
 `;
 
 const Base = styled.div`

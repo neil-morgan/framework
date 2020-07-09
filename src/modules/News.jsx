@@ -1,6 +1,6 @@
-import { Section, Container, Row, Col, Pod, Button, Text } from "..";
+import { Section, Container, Row, Col, Pod, Text } from "..";
 
-const { Title, Heading, Paragraph, Strong, Small, Link, List, Item } = Text;
+const { Title, Paragraph, Strong, Small, Link, List, Item } = Text;
 
 export default function News() {
   return (
@@ -42,40 +42,13 @@ export default function News() {
           </Col>
           <Row mb_2>
             <Col xs sm={12} md={4}>
-              <Pod.Image src="/images/placeholder.jpg" alt="my image" />
-              <Pod.Body>
-                <Heading>News 2</Heading>
-                <Paragraph>
-                  Ipsum consectetur laboris labore voluptate. Sint tempor enim
-                  laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis
-                  ex enim nostrud elit aliquip veniam do veniam.
-                </Paragraph>
-                <Button>Text</Button>
-              </Pod.Body>
+              <Pod content={tempData.pod1} />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Pod.Image src="/images/placeholder.jpg" alt="my image" />
-              <Pod.Body>
-                <Heading>News 2</Heading>
-                <Paragraph>
-                  Ipsum consectetur laboris labore voluptate. Sint tempor enim
-                  laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis
-                  ex enim nostrud elit aliquip veniam do veniam.
-                </Paragraph>
-                <Button>Text</Button>
-              </Pod.Body>
+              <Pod content={tempData.pod2} />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Pod.Image src="/images/placeholder.jpg" alt="my image" />
-              <Pod.Body>
-                <Heading>News 2</Heading>
-                <Paragraph>
-                  Ipsum consectetur laboris labore voluptate. Sint tempor enim
-                  laboris aliquip. Elit ullamco culpa ad amet. Adipisicing quis
-                  ex enim nostrud elit aliquip veniam do veniam.
-                </Paragraph>
-                <Button>Text</Button>
-              </Pod.Body>
+              <Pod content={tempData.pod3} />
             </Col>
           </Row>
           <Col xs>
@@ -96,3 +69,27 @@ export default function News() {
     </>
   );
 }
+
+const tempData = {
+  pod1: {
+    image: "placeholder.jpg",
+    heading: "Heading 1",
+    text:
+      "Est minim laboris eu eu irure. Incididunt fugiat exercitation do est minim laboris eu eu irure. Fugiat exercitation do est minim laboris eu eu irure.",
+    button: { text: "Text", url: "/" },
+  },
+  pod2: {
+    image: "placeholder.jpg",
+    heading: "Heading 2",
+    text:
+      "Incididunt fugiat exercitation do est minim laboris eu eu irure. Fugiat exercitation do est minim laboris eu eu irure.",
+    button: { text: "Text", url: "/" },
+  },
+  pod3: {
+    image: "placeholder.jpg",
+    heading: "Heading 3",
+    text:
+      "Incididunt fugiat exercitation do est minim laboris eu eu irure. Fugiat exercitation do est minim laboris eu eu irure.",
+    button: { text: "Text", url: "/" },
+  },
+};

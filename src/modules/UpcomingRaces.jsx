@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import utilities from "../utilities";
 import Config from "../config";
-
 import { Section, Container, Col, Pod, Heading, Text, Button } from "..";
 
+const { Title, Paragraph, Strong, Small, Link, List, Item } = Text;
 const { breakpoints } = Config();
 const { brightness } = utilities;
 
@@ -12,20 +12,18 @@ export default function UpcomingRaces() {
     <Section>
       <Container>
         <Col xs>
-          <Heading.H1>Upcoming Races</Heading.H1>
+          <Title>Upcoming Races</Title>
         </Col>
 
         <Col xs>
-          <Pod>
-            <List>
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-            </List>
-          </Pod>
+          <Races>
+            <RaceItem />
+            <RaceItem />
+            <RaceItem />
+            <RaceItem />
+            <RaceItem />
+            <RaceItem />
+          </Races>
         </Col>
 
         <Col xs>
@@ -36,8 +34,8 @@ export default function UpcomingRaces() {
   );
 }
 
-const ListItem = () => (
-  <Item>
+const RaceItem = () => (
+  <RaceItemStyle>
     <Identifier>
       <Logo src={"images/racelogo.png"} alt="xyz" />
       <Name>Race XYZ</Name>
@@ -45,15 +43,15 @@ const ListItem = () => (
     <Details>
       <Date>00/00/00</Date>
       <More>
-        <Text.A>More</Text.A>
+        <Link>More</Link>
       </More>
     </Details>
-  </Item>
+  </RaceItemStyle>
 );
 
-const List = styled.ul``;
+const Races = styled.ul``;
 
-const Item = styled.li`
+const RaceItemStyle = styled.li`
   display: flex;
   align-items: center;
   background: ${({ theme }) => brightness(theme.background, -2.5)};
@@ -83,14 +81,14 @@ const Logo = styled.img`
   margin: 0 1rem 0 0;
 `;
 
-const Name = styled(Text.P)`
+const Name = styled(Paragraph)`
   margin: 0;
 `;
 
-const Date = styled(Text.P)`
+const Date = styled(Paragraph)`
   margin: 0;
 `;
 
-const More = styled(Text.P)`
+const More = styled(Paragraph)`
   margin: 0 0 0 3rem;
 `;

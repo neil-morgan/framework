@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import utilities from "../utilities";
-import { Section, Container, Row, Col, Heading, Text, Button } from "..";
+import { Section, Container, Row, Col, Text, Button } from "..";
 
 import Config from "../config";
 
+const { Title, Heading, Paragraph } = Text;
 const { breakpoints } = Config();
 const { brightness, opacity } = utilities;
 
@@ -19,24 +20,22 @@ export default function NextRace() {
     <Section>
       <Container>
         <Col xs>
-          <Heading.H1>Next Race</Heading.H1>
+          <Title>Next Race</Title>
         </Col>
         <Col xs>
           <Race>
             <Row between="xs">
               <Col xs={9} sm={8} md={6}>
-                <Heading.H2 mb0="xs">{tempData.title}</Heading.H2>
+                <Heading mb0="xs">{tempData.title}</Heading>
                 <StartDate>Starts in {tempData.time}</StartDate>
-                <Text.P>{tempData.description}</Text.P>
+                <Paragraph>{tempData.description}</Paragraph>
               </Col>
               <Col xs={3} sm={4}>
                 <Track />
               </Col>
             </Row>
             <Col xs>
-              <Button left="sm" center="xs">
-                More info
-              </Button>
+              <Button as_start>More info</Button>
             </Col>
           </Race>
         </Col>
@@ -106,7 +105,7 @@ const Graphic = styled.svg`
   }
 `;
 
-const StartDate = styled(Text.P)`
+const StartDate = styled(Paragraph)`
   color: ${({ theme }) => brightness(theme.secondary, 15)};
   font-weight: bold;
 `;

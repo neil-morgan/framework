@@ -1,17 +1,17 @@
-import { Section, Container, Col, Pod, Heading, Text } from "..";
+import { Section, Container, Col, Pod, Text } from "..";
+
+const { Title, Heading, Paragraph } = Text;
 
 export default function Results() {
   return (
     <Section>
       <Container>
         <Col xs>
-          <Heading.H1>Results</Heading.H1>
+          <Title>Results</Title>
         </Col>
         <Col xs>
-          <Pod>
-            <Heading.H2>Results data</Heading.H2>
-            <Text.P>Bar charts and comparisons and stuff</Text.P>
-          </Pod>
+          <Heading>Results data</Heading>
+          <Paragraph>Bar charts and comparisons and stuff</Paragraph>
         </Col>
       </Container>
     </Section>

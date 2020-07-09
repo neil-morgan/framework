@@ -7,7 +7,7 @@ export default function Schedule() {
   return (
     <Page>
       <NextRace />
-      <Divider />
+
       <UpcomingRaces />
     </Page>
   );

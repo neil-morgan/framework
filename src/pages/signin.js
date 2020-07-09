@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import Page from "../components/Page";
-import { Section, Container, Row, Col, Heading, Text, Button } from "../";
+import { Section, Container, Row, Col, Text, Button } from "../";
 import utilities from "../utilities";
 
 const { brightness } = utilities;
@@ -24,7 +24,7 @@ export default function Schedule() {
         <Container fluid>
           <Col xs>
             <Form onSubmit={handleSubmit} autoComplete="off">
-              <Heading.H2>Sign up</Heading.H2>
+              <Text.Heading>Sign up</Text.Heading>
               <label>First Name</label>
               <input
                 type="text"
