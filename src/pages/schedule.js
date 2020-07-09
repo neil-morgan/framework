@@ -7,7 +7,6 @@ export default function Schedule() {
   return (
     <Page>
       <NextRace />
-
       <UpcomingRaces />
     </Page>
   );

@@ -24,7 +24,6 @@ export default function Schedule() {
         <Container fluid>
           <Col xs>
             <Form onSubmit={handleSubmit} autoComplete="off">
-              <Text.Heading>Sign up</Text.Heading>
               <InputGroup>
                 <label htmlFor="firstName">First Name</label>
                 <input
@@ -69,8 +68,6 @@ export default function Schedule() {
                 onChange={handleInputChange}
                 value={inputs.password2}
               />
-
-              <Button link="/auth">Sign Up</Button>
             </Form>
             <Link href="/signin">
               <a>Or sign in</a>

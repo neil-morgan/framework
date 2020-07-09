@@ -104,6 +104,7 @@ const Main = styled.main`
   top: 0;
   right: 0;
   left: 0;
+  padding-top: 5rem;
   transform: translate(0, 0);
   transition: all 500ms;
   transform-origin: right;
